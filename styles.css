@@ -11,80 +11,74 @@ body {
     background: #2d3748;
 }
 
-/* ------------------- HERO SECTION: STATIC, LEFT-ALIGNED ------------------- */
+/* --- HERO CONTAINER --- */
 .hero {
-    /* Dynamic background remains */
     background: radial-gradient(circle at center, #1a202c 0%, #000000 100%);
-    color: white;
-    min-height: 100vh;
-    padding: 4rem 2rem 2rem;
-    position: relative; 
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    
-    /* NEW: Use Flexbox to vertically center the content wrapper */
+    height: 100vh; /* Exactly 100% of the screen height */
     display: flex;
-    justify-content: flex-start; /* Aligns content to the left */
+    flex-direction: column;
+    justify-content: center; /* Centers everything as a group */
     align-items: center;
-    text-align: left; /* Text alignment is now left */
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
 }
 
-.hero-content-wrapper {
-    /* Ensures the content (logo, p, button) takes up less than half the screen */
-    max-width: 50%; 
-    padding-left: 5%; /* Slight offset from the very edge */
-    z-index: 2; /* Keep above the grid */
+/* --- THE LOGO --- */
+.hero h1 {
+    font-size: clamp(4rem, 8vh, 7rem); /* Shrinks if the screen is short */
+    margin-bottom: 2vh;
+    text-shadow: 0 0 15px rgba(210, 105, 30, 0.8);
+    color: white;
+    letter-spacing: 12px;
 }
 
-/* Creates the background grid overlay */
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* --- THE VIDEO FEATURE WINDOW --- */
+.video-window-container {
+    width: 80%;
+    max-width: 800px;
+    max-height: 40vh; /* Crucial: Prevents video from taking too much vertical space */
+    aspect-ratio: 16/9;
+    border: 3px solid #d2691e;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    transition: opacity 1s ease;
+}
+
+.video-window-container video {
     width: 100%;
     height: 100%;
-    /* Creates a subtle grid pattern */
-    background-image: linear-gradient(to right, rgba(210, 105, 30, 0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(210, 105, 30, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    opacity: 0.6; 
-    z-index: 1;
-    pointer-events: none;
-    animation: scanline 20s linear infinite;
+    object-fit: cover;
 }
 
-.hero h1 {
-    font-size: 10rem;
-    margin-bottom: 1rem; 
-    font-weight: 700;
-    /* Keeps the glowing effect on the logo */
-    text-shadow: 
-        0 0 10px rgba(210, 105, 30, 0.8), 
-        0 0 20px rgba(210, 105, 30, 0.6), 
-        0 0 30px rgba(210, 105, 30, 0.4); 
-    letter-spacing: 12px; 
-    position: relative;
-    color: white; 
-    /* Static - remove all animation related styles */
+/* --- THE CENTERED BUTTON --- */
+.learn-more-btn {
+    background: #8b4513;
+    color: white;
+    border: 2px solid #d2691e;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin-top: 3vh; /* Sits tightly below the video */
+    
+    /* Animation states */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
 }
 
-.hero h1 span {
-    /* Ensure the individual spans render normally as one word */
-    display: inline;
+.learn-more-btn.fade-in {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-
-.hero p {
-    font-size: 1.5rem;
-    max-width: 800px;
-    line-height: 1.9;
-    margin-bottom: 3rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    position: relative;
-    /* Static - removed all animation related styles */
+.hidden {
+    display: none;
 }
-
 .learn-more-btn {
     background: #8b4513;
     color: white;

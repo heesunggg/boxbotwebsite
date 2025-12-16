@@ -17,14 +17,37 @@
         <a href="journey.html">Journey</a>
     </nav>
 
-    <div class="main-content">
-        <section class="hero" id="home">
-            <div class="hero-content-wrapper">
-                <h1>BoxBot</h1>
-                
-                <a href="#summary" class="learn-more-btn">Learn More</a>
-            </div>
-        </section>
+<section class="hero" id="home">
+    <div class="hero-content-wrapper">
+        <h1>BoxBot</h1>
+    </div>
+
+    <div class="video-window-container" id="video-window-container">
+        <video id="hero-bg-video" autoplay muted playsinline>
+            <source src="media/examplevideo.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <a href="#summary" class="learn-more-btn hidden" id="learn-more-btn">Learn More</a>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('hero-bg-video');
+        const videoContainer = document.getElementById('video-window-container');
+        const btn = document.getElementById('learn-more-btn');
+
+        video.onplay = () => {
+            setTimeout(() => {
+                // Dim the video smoothly
+                videoContainer.style.opacity = "0.3"; 
+                // Spawn the button underneath
+                btn.classList.remove('hidden');
+                btn.classList.add('fade-in');
+            }, 5000); // 5 second delay
+        };
+    });
+</script>
 
         <section class="section" id="summary">
             <h2>Project Summary</h2>
