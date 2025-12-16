@@ -1,0 +1,84 @@
+/* This class is applied to the <body> tag of all detail pages */
+.detail-body {
+    background-color: #2d3748; /* Same background as the main body */
+    padding-top: 50px; /* Space for the fixed navigation */
+}
+
+.detail-page-container {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #1a202c;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    min-height: 85vh; /* Ensure content is visible */
+}
+
+.detail-page-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #d2691e;
+    border-bottom: 3px solid #d2691e;
+    padding-bottom: 0.5rem;
+}
+
+/* Back button style (copied from your original) */
+.back-button {
+    background: #8b4513;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    transition: background 0.3s;
+    text-decoration: none; /* Make sure it looks like a button, not a link */
+    display: inline-block;
+}
+
+.back-button:hover {
+    background: #d2691e;
+}
+
+/* Style for the BOM table on budget.html */
+.budget-table-container {
+    overflow-x: auto; /* Ensures table is responsive */
+    margin-top: 2rem;
+}
+
+.budget-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #cbd5e0;
+}
+
+.budget-table-container th, .budget-table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #4a5568;
+}
+
+.budget-table-container th {
+    background-color: #384252;
+    color: #d2691e;
+    font-size: 1.1rem;
+}
+
+.budget-table-container tr:hover {
+    background-color: #2d3748;
+}
+
+.total-row-label {
+    text-align: right;
+    font-weight: bold;
+    color: #d2691e;
+    border-top: 2px solid #d2691e;
+}
+
+.total-row-value {
+    font-weight: bold;
+    color: #d2691e;
+    font-size: 1.2rem;
+    border-top: 2px solid #d2691e;
+}
