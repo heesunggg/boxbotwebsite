@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoxBot - Budget Breakdown</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="sections.css"> 
+    <title>BoxBot - Budget (BOM)</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="detail-body">
-    
+<body>
     <nav class="nav">
         <a href="index.html">Home (Summary)</a>
         <a href="electrical.html">Electrical</a>
@@ -18,110 +16,199 @@
         <a href="journey.html">Journey</a>
     </nav>
 
-    <div class="detail-page-container">
-        
-        <a href="index.html" class="back-button">← Back to Home Summary</a>
-        
-        <h2>💰 Project Budget and Bill of Materials (BOM)</h2>
-        <p class="intro-paragraph">The BoxBot project was constrained by a budget of **\$250.00**. The Bill of Materials (BOM) below details the procurement of every component and material used. Crucially, the **Estimated Unit Cost** reflects the true market price, providing the total cost required for another team to replicate this project, regardless of whether we obtained the item for free.</p>
+    <div class="main-content">
+<section class="section">
+    <h2>Bill of Materials (BOM)</h2>
+    <p class="summary-text">The following tables showcase the materials bought and resourced for the BoxBot project.</p>
 
-        <section class="detail-section">
-            <h3>Bill of Materials Breakdown</h3>
-            <div class="budget-table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Item / Component</th>
-                            <th>Subsystem</th>
-                            <th>Quantity</th>
-                            <th>Source (How Obtained)</th>
-                            <th>Est. Unit Cost ($)</th>
-                            <th>Total Est. Cost ($)</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Microcontroller (e.g., Teensy 4.0)</td>
-                            <td>Control/Software</td>
-                            <td>1</td>
-                            <td>Purchased (Adafruit)</td>
-                            <td>$29.50</td>
-                            <td>$29.50</td>
-                            <td>High-speed main controller.</td>
-                        </tr>
-                        <tr>
-                            <td>DC Motor, High Torque Geared (w/Encoder)</td>
-                            <td>Mechanical/Drive</td>
-                            <td>2</td>
-                            <td>Purchased (Amazon)</td>
-                            <td>$21.00</td>
-                            <td>$42.00</td>
-                            <td>Used for differential drive.</td>
-                        </tr>
-                        <tr>
-                            <td>Plywood, 1/4" Baltic Birch</td>
-                            <td>Mechanical/Chassis</td>
-                            <td>0.5 sheet</td>
-                            <td>Free (Scrap from Olin Lab)</td>
-                            <td>$40.00</td>
-                            <td>$20.00</td>
-                            <td>Estimated cost of the material quantity used if purchased new.</td>
-                        </tr>
-                        <tr>
-                            <td>Infrared Proximity Sensor Array</td>
-                            <td>Electrical/Sensing</td>
-                            <td>1</td>
-                            <td>Team Stock (Previous Project)</td>
-                            <td>$18.75</td>
-                            <td>$18.75</td>
-                            <td>Used for alignment and box detection.</td>
-                        </tr>
-                        <tr>
-                            <td>Batteries (3S LiPo, 5000mAh)</td>
-                            <td>Electrical/Power</td>
-                            <td>1</td>
-                            <td>Purchased (Hobby store)</td>
-                            <td>$45.00</td>
-                            <td>$45.00</td>
-                            <td>Main power source.</td>
-                        </tr>
-                        <tr>
-                            <td>Fasteners (Screws, Nuts, Washers)</td>
-                            <td>Mechanical</td>
-                            <td>1 set</td>
-                            <td>Free (Lab Supply)</td>
-                            <td>$5.00</td>
-                            <td>$5.00</td>
-                            <td>Estimate for a small kit of various hardware.</td>
-                        </tr>
-                        <tr>
-                            <td>Total (Sub-components)</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>$160.25</td>
-                            <td>-</td>
-                        </tr>
-                        
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="5" class="total-row-label">**GRAND TOTAL PROJECT COST (for Replication):**</td>
-                            <td class="total-row-value">**$160.25**</td>
-                            <td>**Budget Cap: $250.00**</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </section>
-        
-        <section class="detail-section">
-            <h3>Budget Commentary and Allocation Rationale</h3>
-            <p>Our team prioritized spending on high-quality drive motors and the main microcontroller to ensure precision and reliability, which were key performance metrics. We actively chose to use readily available materials (like scrap wood and lab fasteners) for the chassis construction to keep the total cost well below the $250 limit, retaining a healthy buffer for unexpected purchases.</p>
-        </section>
-
+    <h3>Purchased Components</h3>
+    <div class="table-container">
+        <table class="budget-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Amount</th>
+                    <th>Unit Cost</th>
+                    <th>Notes</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Metal Gear Rack (4 ft. Length)</td>
+                    <td>1</td>
+                    <td>$37.40</td>
+                    <td></td>
+                    <td>$37.40</td>
+                </tr>
+                <tr>
+                    <td>Metal Gear (16 Teeth)</td>
+                    <td>1</td>
+                    <td>$21.67</td>
+                    <td></td>
+                    <td>$21.67</td>
+                </tr>
+                <tr>
+                    <td>24V 4Ah Battery</td>
+                    <td>1</td>
+                    <td>$41.99</td>
+                    <td></td>
+                    <td>$41.99</td>
+                </tr>
+                <tr>
+                    <td>Stainless Steel Precision Shafting</td>
+                    <td>1</td>
+                    <td>$0.89</td>
+                    <td>(3/16") x 2.00"</td>
+                    <td>$0.89</td>
+                </tr>
+                <tr>
+                    <td>Set-Screw Shaft Coupler</td>
+                    <td>1</td>
+                    <td>$4.99</td>
+                    <td>0.1875" to 5mm</td>
+                    <td>$4.99</td>
+                </tr>
+                <tr>
+                    <td>3604 Series Omni Wheel</td>
+                    <td>4</td>
+                    <td>$8.99</td>
+                    <td>72mm Diameter</td>
+                    <td>$35.96</td>
+                </tr>
+                <tr>
+                    <td>5 pack DC-DC step down</td>
+                    <td>1</td>
+                    <td>$7.99</td>
+                    <td></td>
+                    <td>$7.99</td>
+                </tr>
+                <tr>
+                    <td>Roller Ball Transfer Bearing</td>
+                    <td>1</td>
+                    <td>$14.99</td>
+                    <td>6 Pcs - 1"</td>
+                    <td>$14.99</td>
+                </tr>
+                <tr>
+                    <td>304 Stainless Steel Round Rods</td>
+                    <td>1</td>
+                    <td>$17.09</td>
+                    <td>8mm</td>
+                    <td>$17.09</td>
+                </tr>
+                <tr>
+                    <td>6061 Aluminum Sheet</td>
+                    <td>1</td>
+                    <td>$74.37</td>
+                    <td>1/4" </td>
+                    <td>$74.37</td>
+                </tr>
+                <tr>
+                    <td>6-Circuit LED Blade Fuse Block Box</td>
+                    <td>1</td>
+                    <td>$7.99</td>
+                    <td></td>
+                    <td>$7.99</td>
+                </tr>
+                <tr>
+                    <td>Servo City Tax</td>
+                    <td>1</td>
+                    <td>$14.61</td>
+                    <td></td>
+                    <td>$14.61</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td colspan="4">Total Money Spent</td>
+                    <td>$279.94</td> </tr>
+            </tfoot>
+        </table>
     </div>
-</body>
-</html>
+
+    <h3 style="margin-top: 3rem;">Found / Personal Items</h3>
+    <div class="table-container">
+        <table class="budget-table found-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Amount</th>
+                    <th>Estimated Value</th>
+                    <th>Source / Note</th>
+                    <th>Project Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Assorted Screws and Nuts</td>
+                    <td>1</td>
+                    <td>$10.00</td>
+                    <td>Got from the screw drawers</td>
+                    <td>$10.00</td>
+                </tr>
+                <tr>
+                    <td>Raspberry Pi 2</td>
+                    <td>1</td>
+                    <td>$39.95</td>
+                    <td>Jacob's personal</td>
+                    <td>$39.95</td>
+                </tr>
+                <tr>
+                    <td>4118S-04S Hybrid Stepper Motor</td>
+                    <td>1</td>
+                    <td>$63.14</td>
+                    <td>Jackson's personal</td>
+                    <td>$63.14</td>
+                </tr>
+                <tr>
+                    <td>Intel RealSense D435 Depth Camera</td>
+                    <td>1</td>
+                    <td>$134.99</td>
+                    <td>Borrowed from Victora Preston</td>
+                    <td>$134.99</td>
+                </tr>
+                <tr>
+                    <td>Sabertooth 2x12 Dual 12A Motor Driver</td>
+                    <td>1</td>
+                    <td>$77.95</td>
+                    <td>Found in the PIE room</td>
+                    <td>$77.95</td>
+                </tr>
+                <tr>
+                    <td>Linear Ball Bearings</td>
+                    <td>1</td>
+                    <td>$9.99</td>
+                    <td>Kefan's personal</td>
+                    <td>$9.99</td>
+                </tr>
+                <tr>
+                    <td>Digital Servo 25kg High Torque</td>
+                    <td>2</td>
+                    <td>$19.99</td>
+                    <td>Jackson's personal</td>
+                    <td>$39.98</td>
+                </tr>
+                <tr>
+                    <td>L298N Motor DC Dual H-Bridge</td>
+                    <td>1</td>
+                    <td>$9.99</td>
+                    <td>Pranav's Personal</td>
+                    <td>$9.99</td>
+                </tr>
+                <tr>
+                    <td>3/8 in. x 6 ft. Plain Steel Solid Round Rod</td>
+                    <td>1</td>
+                    <td>$20.95</td>
+                    <td>Jackson provided</td>
+                    <td>$20.95</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td colspan="4">Total Money Estimated (Full Value)</td>
+                    <td>$655.94</td> </tr>
+            </tfoot>
+        </table>
+    </div>
+</section>
