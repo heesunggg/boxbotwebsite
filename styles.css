@@ -10,94 +10,111 @@ body {
     color: #e2e8f0;
     background: #2d3748;
 }
-
-/* --- HERO CONTAINER --- */
+/* ------------------- HERO CONTAINER ------------------- */
 .hero {
-    background: radial-gradient(circle at center, #1a202c 0%, #000000 100%);
-    height: 100vh; /* Exactly 100% of the screen height */
+    background: #000; /* Fallback */
+    height: 100vh; /* Exactly the height of your screen */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers everything as a group */
-    align-items: center;
-    position: relative;
+    justify-content: center; /* Vertically centers the logo and button */
+    align-items: center;     /* Horizontally centers the logo and button */
+    position: relative; 
     overflow: hidden;
-    padding: 1rem;
 }
 
-/* --- THE LOGO --- */
+/* 1. THE VIDEO (The Bottom Layer) */
+#hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills screen without stretching */
+    z-index: 1;
+    transition: opacity 1.5s ease;
+}
+
+/* 2. THE GRID OVERLAY (The Middle Layer) */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(210, 105, 30, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(210, 105, 30, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.6; 
+    z-index: 2; /* Sits on top of video, below text */
+    pointer-events: none;
+    animation: scanline 20s linear infinite;
+}
+
+/* ------------------- HERO CONTENT (THE LOGO) ------------------- */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 3;
+    width: 100%; /* Spans full width to allow internal alignment */
+    display: flex;
+    justify-content: flex-end; /* Pushes the logo to the right side */
+    padding-right: 50%;         /* Adjust this to move it more or less to the right */
+    
+    /* This ensures it stays centered vertically while aligned right */
+    position: absolute;
+    top: 70%;
+    transform: translateY(-100%); /* Moves it up slightly to make room for video/button */
+}
+
 .hero h1 {
-    font-size: clamp(4rem, 8vh, 7rem); /* Shrinks if the screen is short */
-    margin-bottom: 2vh;
-    text-shadow: 0 0 15px rgba(210, 105, 30, 0.8);
+    font-size: 10rem;
+    font-weight: 700;
+    text-shadow: 0 0 25px rgba(210, 105, 30, 0.9);
     color: white;
     letter-spacing: 12px;
 }
 
-/* --- THE VIDEO FEATURE WINDOW --- */
-.video-window-container {
-    width: 80%;
-    max-width: 800px;
-    max-height: 40vh; /* Crucial: Prevents video from taking too much vertical space */
-    aspect-ratio: 16/9;
-    border: 3px solid #d2691e;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #000;
-    transition: opacity 1s ease;
-}
-
-.video-window-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* --- THE CENTERED BUTTON --- */
+/* ------------------- THE BUTTON (LOWERED) ------------------- */
 .learn-more-btn {
+    /* Keep your existing colors and borders */
     background: #8b4513;
     color: white;
     border: 2px solid #d2691e;
-    padding: 1rem 3rem;
+    padding: 1.2rem 3.5rem;
     border-radius: 50px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-decoration: none;
-    margin-top: 3vh; /* Sits tightly below the video */
+    cursor: pointer;
     
-    /* Animation states */
+    /* CHANGE THIS: Position absolute to put it at the very bottom */
+    position: absolute;
+    bottom: 15%; /* Sets it 10% from the bottom of the screen */
+    left: 50%;
+    transform: translateX(-50%) translateY(20px); /* Centers it horizontally */
+    
+    z-index: 3;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
+    transition: all 1s ease-out;
 }
 
+/* Adjust the reveal animation for the new positioning */
 .learn-more-btn.fade-in {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
-    transition: opacity 1s ease, transform 1s ease;
+    transform: translateX(-50%) translateY(0); /* Maintains horizontal center */
 }
 
-.hidden {
-    display: none;
-}
-.learn-more-btn {
-    background: #8b4513;
-    color: white;
-    border: 2px solid #d2691e;
-    padding: 1rem 3rem;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-family: Georgia, serif;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.learn-more-btn:hover {
-    background: #d2691e;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+/* ------------------- REST OF YOUR CONTENT ------------------- */
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #1a202c;
+    border-radius: 8px;
+    position: relative;
+    z-index: 10; /* Ensures content scrolls OVER the video intro */
 }
 
 /* ------------------- NAVIGATION ------------------- */
