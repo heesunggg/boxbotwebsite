@@ -12,6 +12,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     min-height: 85vh; /* Ensure content is visible */
+    color: #cbd5e0; /* Default text color for details */
 }
 
 .detail-page-container h2 {
@@ -22,7 +23,26 @@
     padding-bottom: 0.5rem;
 }
 
-/* Back button style (copied from your original) */
+.detail-page-container h3 {
+    color: #d2691e;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.detail-page-container h4 {
+    color: #e2e8f0;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail-page-container p, .detail-page-container li {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Back button style */
 .back-button {
     background: #8b4513;
     color: white;
@@ -33,7 +53,7 @@
     font-size: 1rem;
     margin-bottom: 2rem;
     transition: background 0.3s;
-    text-decoration: none; /* Make sure it looks like a button, not a link */
+    text-decoration: none; 
     display: inline-block;
 }
 
@@ -41,9 +61,49 @@
     background: #d2691e;
 }
 
-/* Style for the BOM table on budget.html */
+/* --- Content Styling for Technical Detail Pages --- */
+
+.detail-section {
+    padding: 2rem 0;
+    border-bottom: 1px dashed #4a5568;
+}
+
+.detail-section:last-of-type {
+    border-bottom: none;
+}
+
+.visual-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.visual-box {
+    background: #2d3748;
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.visual-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.visual-box figcaption {
+    font-size: 0.9rem;
+    color: #99aab5;
+    font-style: italic;
+}
+
+/* Style for the BOM table on budget.html (copied from earlier suggestion) */
 .budget-table-container {
-    overflow-x: auto; /* Ensures table is responsive */
+    overflow-x: auto; 
     margin-top: 2rem;
 }
 

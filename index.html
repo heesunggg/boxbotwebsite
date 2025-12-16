@@ -9,24 +9,29 @@
 </head>
 <body>
     <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="#diagrams">Diagrams</a>
-        <a href="#sections">Details</a>
-        <a href="#team-section">Team</a>
+        <a href="index.html">Home (Summary)</a>
+        <a href="electrical.html">Electrical</a>
+        <a href="mechanical.html">Mechanical</a>
+        <a href="software.html">Software/Firmware</a>
+        <a href="budget.html">Budget (BOM)</a>
+        <a href="journey.html">Journey</a>
     </nav>
 
     <div class="main-content">
         <section class="hero" id="home">
-            <h1>
-                <span>B</span><span>o</span><span>x</span><span>B</span><span>o</span><span>t</span>
-            </h1>
-            <p>An autonomous, non-tethered robotic system designed to align with, lift, and transport cardboard boxes to designated landing zones with precision and efficiency.</p>
-            <a href="#summary" class="learn-more-btn">Learn More</a>
+            <div class="hero-content-wrapper">
+                <h1>BoxBot</h1>
+                
+                <a href="#summary" class="learn-more-btn">Learn More</a>
+            </div>
         </section>
 
         <section class="section" id="summary">
             <h2>Project Summary</h2>
             <div class="summary-text">
+                <p class="project-tagline" style="font-weight: bold; font-size: 1.2rem; color: #d2691e; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 1px solid #4a5568;">
+                    An autonomous, non-tethered robotic system designed to align with, lift, and transport cardboard boxes to designated landing zones with precision and efficiency.
+                </p>
                 <p>BoxBot is an innovative autonomous robotics project developed over the course of a semester. Our objective was to create a fully autonomous, non-tethered robot capable of identifying cardboard boxes, aligning with them precisely, lifting them safely, and transporting them to a designated landing zone without human intervention.</p>
                 
                 <p>The project integrates multiple engineering disciplines including mechanical design, electrical systems, embedded firmware, and autonomous control algorithms. Through iterative design and testing phases, our team successfully developed a system that demonstrates the practical applications of autonomous robotics in material handling tasks.</p>
@@ -35,9 +40,13 @@
             <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #d2691e; font-size: 1.8rem;">Project Demonstration</h3>
             <div class="video-container">
                 <div class="video-placeholder">
-                    Insert Video Link Here (YouTube/Vimeo embed)
+                    Insert Video Link Here (YouTube/Vimeo embed) or direct video tag: <br> 
+                    &lt;video src="media/hero-video.mp4" controls autoplay muted loop&gt;&lt;/video&gt;
                 </div>
             </div>
+            
+            <h3>Design Rationale and Trade-Offs</h3>
+            <p>During our initial ideation phase, we considered [Alternative Design 1] but ultimately chose the current system due to [specific reason, e.g., budget, familiarity, performance]. For instance, our choice of [Material/Component] over [Alternative] saved $XX, which was critical to staying under the $250 budget constraint...</p>
         </section>
 
         <section class="section" id="diagrams">
@@ -46,14 +55,12 @@
                 <div class="diagram-box">
                     <h3>System Diagram</h3>
                     <div class="diagram-placeholder">
-                        System diagram showing subsystem relationships
                         
                     </div>
                 </div>
                 <div class="diagram-box">
                     <h3>Data & Energy Flow</h3>
                     <div class="diagram-placeholder">
-                        Data and energy flow diagram
                         
                     </div>
                 </div>
@@ -90,28 +97,24 @@
             <div class="team-container">
                 <h2>Our Team</h2>
                 <div class="team-grid">
-                    
                     <div class="team-member" onclick="window.open('https://www.linkedin.com/in/heesunghan/')">
                         <div class="team-photo">
                             <img src="media/heesunghanpfp.jpeg" alt="Heesung Han Profile Picture">
                         </div>
                         <h4>Heesung Han - Mechanical</h4>
                     </div>
-                    
                     <div class="team-member" onclick="window.open('https://www.linkedin.com/in/jacksongamache/')">
                         <div class="team-photo">
                             <img src="media/jacksongamachepfp.jpeg" alt="Jackson Gamache Profile Picture">
                         </div>
                         <h4>Jackson Gamache - Mechanical</h4>
                     </div>
-
                     <div class="team-member" onclick="window.open('https://www.linkedin.com/in/jacob-keller-profile/')">
                         <div class="team-photo">
                             <img src="media/jacobkellerpfp.jpeg" alt="Jacob Keller Profile Picture">
                         </div>
                         <h4>Jacob Keller - Electrical/Software</h4>
                     </div>
-                    
                     <div class="team-member" onclick="window.open('https://www.linkedin.com/in/pranav-bonthu-b9468228a/')">
                         <div class="team-photo">
                             <img src="media/pranavbontupfp.jpeg" alt="Pranav Bonthu Profile Picture">
@@ -121,11 +124,10 @@
                 </div>
             </div>
         </section>
-
     </div>
-
+    
     <script>
-        // Script for smooth scrolling to internal anchors on the main page (e.g., #diagrams)
+        // Existing: Script for smooth scrolling to internal anchors on the main page (e.g., #summary)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

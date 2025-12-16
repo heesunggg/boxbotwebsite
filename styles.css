@@ -11,55 +11,78 @@ body {
     background: #2d3748;
 }
 
+/* ------------------- HERO SECTION: STATIC, LEFT-ALIGNED ------------------- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23666" width="1200" height="800"/><path fill="%23888" d="M0 0h400v300H0z"/><path fill="%23555" d="M400 0h400v300H400z"/><path fill="%23777" d="M800 0h400v300H800z"/><path fill="%23777" d="M0 300h400v250H0z"/><path fill="%23666" d="M400 300h400v250H400z"/><path fill="%23888" d="M800 300h400v250H800z"/><path fill="%23555" d="M0 550h400v250H0z"/><path fill="%23888" d="M400 550h400v250H400z"/><path fill="%23666" d="M800 550h400v250H800z"/></svg>');
-    background-size: cover;
-    background-position: center;
+    /* Dynamic background remains */
+    background: radial-gradient(circle at center, #1a202c 0%, #000000 100%);
     color: white;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     padding: 4rem 2rem 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative; 
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    
+    /* NEW: Use Flexbox to vertically center the content wrapper */
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: center;
+    text-align: left; /* Text alignment is now left */
+}
+
+.hero-content-wrapper {
+    /* Ensures the content (logo, p, button) takes up less than half the screen */
+    max-width: 50%; 
+    padding-left: 5%; /* Slight offset from the very edge */
+    z-index: 2; /* Keep above the grid */
+}
+
+/* Creates the background grid overlay */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Creates a subtle grid pattern */
+    background-image: linear-gradient(to right, rgba(210, 105, 30, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(210, 105, 30, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.6; 
+    z-index: 1;
+    pointer-events: none;
+    animation: scanline 20s linear infinite;
 }
 
 .hero h1 {
-    font-size: 8rem;
-    margin-bottom: 2rem;
+    font-size: 10rem;
+    margin-bottom: 1rem; 
     font-weight: 700;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    letter-spacing: 8px;
+    /* Keeps the glowing effect on the logo */
+    text-shadow: 
+        0 0 10px rgba(210, 105, 30, 0.8), 
+        0 0 20px rgba(210, 105, 30, 0.6), 
+        0 0 30px rgba(210, 105, 30, 0.4); 
+    letter-spacing: 12px; 
+    position: relative;
+    color: white; 
+    /* Static - remove all animation related styles */
 }
 
 .hero h1 span {
-    display: inline-block;
-    opacity: 0;
-    animation: fadeInLetter 0.1s forwards;
+    /* Ensure the individual spans render normally as one word */
+    display: inline;
 }
 
-.hero h1 span:nth-child(1) { animation-delay: 0.25s; }
-.hero h1 span:nth-child(2) { animation-delay: 0.5s; }
-.hero h1 span:nth-child(3) { animation-delay: 0.75s; }
-.hero h1 span:nth-child(4) { animation-delay: 1s; }
-.hero h1 span:nth-child(5) { animation-delay: 1.25s; }
-.hero h1 span:nth-child(6) { animation-delay: 1.5s; }
-
-@keyframes fadeInLetter {
-    to {
-        opacity: 1;
-    }
-}
 
 .hero p {
     font-size: 1.5rem;
     max-width: 800px;
-    opacity: 0.95;
     line-height: 1.9;
     margin-bottom: 3rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    /* Static - removed all animation related styles */
 }
 
 .learn-more-btn {
@@ -83,6 +106,7 @@ body {
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
+/* ------------------- NAVIGATION ------------------- */
 .nav {
     position: fixed;
     top: 0;
@@ -108,6 +132,7 @@ body {
     color: #d2691e;
 }
 
+/* ------------------- GENERAL SECTIONS ------------------- */
 .section {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -183,6 +208,7 @@ body {
     font-style: italic;
 }
 
+/* ------------------- SECTION LINKS CARDS ------------------- */
 .section-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -245,6 +271,7 @@ body {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23483D8B" width="400" height="300"/><path d="M50 150 Q125 100 200 150 T350 150" fill="none" stroke="%23FFD700" stroke-width="4" opacity="0.4"/><circle cx="50" cy="150" r="8" fill="%23FFD700" opacity="0.5"/><circle cx="150" cy="125" r="8" fill="%23FFD700" opacity="0.5"/><circle cx="250" cy="175" r="8" fill="%23FFD700" opacity="0.5"/><circle cx="350" cy="150" r="8" fill="%23FFD700" opacity="0.5"/></svg>');
 }
 
+
 .section-card > * {
     position: relative;
     z-index: 1;
@@ -260,6 +287,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* ------------------- TEAM SECTION ------------------- */
 .team-section {
     background: #1a202c;
     padding: 4rem 2rem;
@@ -329,67 +357,8 @@ body {
     font-size: 1.2rem;
 }
 
-.detail-page {
-    display: none;
-    padding: 6rem 2rem 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #1a202c;
-    border-radius: 8px;
-    min-height: 100vh;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.detail-page.active {
-    display: block;
-}
-
-.detail-page h2 {
-    color: #d2691e;
-}
-
-.detail-page p {
-    color: #cbd5e0;
-}
-
-.back-button {
-    background: #8b4513;
-    color: white;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    transition: background 0.3s;
-}
-
-.back-button:hover {
-    background: #d2691e;
-}
-
-.main-content.hidden {
-    display: none;
-}
-
-.journey-timeline {
-    padding: 2rem 0;
-}
-
-.journey-item {
-    padding: 2rem;
-    margin-bottom: 2rem;
-    background: #2d3748;
-    border-left: 4px solid #d2691e;
-    border-radius: 4px;
-}
-
-.journey-item h3 {
-    color: #d2691e;
-    margin-bottom: 0.5rem;
-}
-
-.journey-item p {
-    color: #cbd5e0;
-    line-height: 1.8;
+/* ------------------- KEYFRAMES (Animations) ------------------- */
+@keyframes scanline {
+    from { background-position: 0 0; }
+    to { background-position: 50px 50px; }
 }
