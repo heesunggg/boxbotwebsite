@@ -841,23 +841,40 @@ html {
     line-height: 1.4;
 }
 
-/* FULL WIDTH CONTENT BLOCK */
+/* ------------------- EXPANSION FIX ------------------- */
+
 .full-width-details {
-    grid-column: 1 / -1; /* Spans across all 3 grid columns */
-    max-height: 0;
+    grid-column: 1 / -1;
+    /* Start at 0 for the animation */
+    max-height: 0; 
     opacity: 0;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
+    overflow: hidden; /* This is what cuts off your content */
+    transition: max-height 0.8s ease-in-out, opacity 0.5s ease;
     background: rgba(45, 55, 72, 0.6);
     border-radius: 8px;
 }
 
 .full-width-details.open {
-    max-height: 800px;
+    /* FIX: Increase this to a very large number (e.g., 2000px or 3000px) 
+       to ensure it fits the text and images */
+    max-height: 3000px; 
     opacity: 1;
-    padding: 2rem;
+    padding: 2.5rem;
     margin-top: 1.5rem;
     border-bottom: 3px solid #d2691e;
+    
+    /* Optional: If the content is still massive, this allows scrolling 
+       inside the box instead of cutting off */
+    overflow-y: visible; 
+}
+
+/* Ensure the wrapper doesn't restrict height */
+.initial-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    height: auto; 
+
 }
 
 .full-width-details ul {
@@ -875,4 +892,153 @@ html {
     float: right;
     color: #d2691e;
     font-weight: bold;
+}
+
+/* ------------------- INITIAL STAGE SPECIFIC ------------------- */
+.initial-stage {
+    grid-column: 1 / -1; /* Always spans the full width */
+    border-top-color: #a0aec0; /* Neutral grey color for the start */
+    margin-bottom: 0.5rem;
+}
+
+.initial-stage.active-btn {
+    border-top-color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure the grid stays aligned with the new element */
+.phase-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Rest of your discipline-box and full-width-details code stays the same */
+
+
+/* Container for the rich content inside the expansion */
+.initial-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.initial-sub h5 {
+    color: #d2691e;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Flex layout for text next to an image */
+.initial-sub-flex {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.sub-text { flex: 2; }
+.sub-image { flex: 1; }
+
+.journey-inline-img {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-caption {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Ideation Gallery Styling */
+.ideation-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 800px) {
+    .initial-sub-flex {
+        flex-direction: column;
+    }
+    .ideation-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ------------------- INITIAL STAGES RICH TEXT ------------------- */
+
+.initial-sub p {
+    font-size: 1.1rem; /* Standard readable size */
+    line-height: 1.6;
+    color: #cbd5e0;
+    margin-bottom: 1rem;
+}
+
+.initial-sub ul {
+    margin-left: 20px;
+    margin-bottom: 1.5rem;
+}
+
+/* FIX: Ensure list items match paragraph text size exactly */
+.initial-sub ul li {
+    font-size: 1.05rem; /* Slightly smaller than p to account for bullet visual weight */
+    line-height: 1.5;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    list-style-type: disc;
+}
+
+/* Bold headers inside bullets should not be overly large */
+.initial-sub ul li strong {
+    color: #d2691e;
+    font-weight: 700;
+}
+
+/* Sub-headings for clarity */
+.initial-sub h5 {
+    color: #d2691e;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.centered-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pushes everything to the horizontal center */
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.journey-main-img {
+    max-width: 85%; /* Prevents the chart from being too wide/overwhelming */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4); /* Adds depth to the chart */
+}
+
+.img-caption {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #a0aec0;
+    text-align: center;
 }
