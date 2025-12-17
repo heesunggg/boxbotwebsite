@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxBot - Development Journey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="electrical.html">Electrical</a>
+        <a href="mechanical.html">Mechanical</a>
+        <a href="software.html">Software/Firmware</a>
+        <a href="budget.html">Budget (BOM)</a>
+        <a href="journey.html">Journey</a>
+    </nav>
+
+    <div class="main-content">
+        <section class="section">
+            <h2>Development Journey</h2>
+            <p class="summary-text">Tracing the evolution of BoxBot from initial concept to a fully autonomous box-moving system.</p>
+
+            <div class="timeline">
+                
+                <div class="journey-phase" id="phase-2">
+                    <div class="phase-header">
+                        <span class="phase-number">02</span>
+                        <h3>Phase 2 / Sprint 1: Prototyping</h3>
+                    </div>
+                    
+                    <div class="phase-content">
+                        <div class="discipline-box mech" onclick="togglePhaseContent('p2-mech', this)">
+                            <div class="box-header">
+                                <h4>MECHANICAL</h4>
+                                <span class="expand-icon">+</span>
+                            </div>
+                            <p class="box-preview">Designing the core U-shaped chassis and wooden prototyping.</p>
+                        </div>
+
+                        <div class="discipline-box elec" onclick="togglePhaseContent('p2-elec', this)">
+                            <div class="box-header">
+                                <h4>ELECTRICAL</h4>
+                                <span class="expand-icon">+</span>
+                            </div>
+                            <p class="box-preview">Establishing the 24V power rail and logic power for the Pi 2.</p>
+                        </div>
+
+                        <div class="discipline-box soft" onclick="togglePhaseContent('p2-soft', this)">
+                            <div class="box-header">
+                                <h4>SOFTWARE</h4>
+                                <span class="expand-icon">+</span>
+                            </div>
+                            <p class="box-preview">Developing low-level Python drivers and PWM motor control.</p>
+                        </div>
+
+                        <div id="p2-mech" class="full-width-details">
+                            <ul>
+                                <li>Laser-cut wooden prototypes to test box approach and clearance.</li>
+                                <li>Sourced 1/4" 6061 aluminum for the final chassis plates.</li>
+                                <li>Verified drive base motor mount tolerances.</li>
+                            </ul>
+                        </div>
+
+                        <div id="p2-elec" class="full-width-details">
+                            <ul>
+                                <li>Tested DC-DC step-down converters for stable 5V logic power.</li>
+                                <li>Initial breadboarding of the L298N Motor Driver circuits.</li>
+                            </ul>
+                        </div>
+
+                        <div id="p2-soft" class="full-width-details">
+                            <ul>
+                                <li>Created Python motor control library for PWM signal generation.</li>
+                                <li>Configured the Linux environment for Intel RealSense D435 SDK.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-phase" id="phase-3">
+                    <div class="phase-header">
+                        <span class="phase-number">03</span>
+                        <h3>Phase 3: System Integration</h3>
+                    </div>
+                    
+                    <div class="phase-content">
+                        <div class="discipline-box mech" onclick="togglePhaseContent('p3-mech', this)">
+                            <div class="box-header">
+                                <h4>MECHANICAL</h4>
+                                <span class="expand-icon">+</span>
+                            </div>
+                            <p class="box-preview">Assembling primary load-bearing and lift systems.</p>
+                        </div>
+
+                        <div class="discipline-box elec" onclick="togglePhaseContent('p3-elec', this)">
+                            <div class="box-header">
+                                <h4>ELECTRICAL</h4>
+                                <span class="expand-icon">+</span>
+                            </div>
+                            <p class="box-preview">Integrating high-power components and safety.</p>
+                        </div>
+
+                        <div class="discipline-box soft" onclick="togglePhaseContent('p3-soft', this)">
+                            <div class="box-header">
+                                <h4>SOFTWARE</h4>
+                                <span class="expand-icon">+</span>
+                            </div>
+                            <p class="box-preview">Autonomous navigation and sensor fusion logic.</p>
+                        </div>
+
+                        <div id="p3-mech" class="full-width-details">
+                            <ul>
+                                <li>Installed 8mm stainless steel rods and linear ball bearings.</li>
+                                <li>Assembled 32-pitch rack and pinion for width adjustment.</li>
+                                <li>Mounted 72mm Omni Wheels for holonomic movement.</li>
+                            </ul>
+                        </div>
+
+                        <div id="p3-elec" class="full-width-details">
+                            <ul>
+                                <li>Wired the 24V battery through the Sabertooth 2x12 driver.</li>
+                                <li>Integrated a 6-circuit LED blade fuse block for safety.</li>
+                            </ul>
+                        </div>
+
+                        <div id="p3-soft" class="full-width-details">
+                            <ul>
+                                <li>Fused RealSense depth data for obstacle avoidance.</li>
+                                <li>Implemented state-machine for "detect, approach, squeeze".</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+    function togglePhaseContent(contentId, btn) {
+        const parent = btn.parentElement;
+        const allContent = parent.querySelectorAll('.full-width-details');
+        const allButtons = parent.querySelectorAll('.discipline-box');
+        const targetContent = document.getElementById(contentId);
+        const isOpening = !targetContent.classList.contains('open');
+
+        // Close all sections in this phase
+        allContent.forEach(c => c.classList.remove('open'));
+        allButtons.forEach(b => b.classList.remove('active-btn'));
+
+        // Open specific section
+        if (isOpening) {
+            targetContent.classList.add('open');
+            btn.classList.add('active-btn');
+        }
+    }
+    </script>
+</body>
+</html>
