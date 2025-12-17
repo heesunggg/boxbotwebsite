@@ -22,37 +22,53 @@
             <p class="summary-text">
                 This is the CAD of BoxBot. We decided that we wanted the drivebase to be as low to the 
                 ground as possible, squeeze the box with with a rack and pinion system, and lift up the box 
-                with a scissor lift mechanism. 
+                with a scissor lift mechanism.
             </p>
 
-            <div class="transparent-cad-container">
-                <img src="media/colorfulcadupdated.png" alt="BoxBot CAD Model">
-                <p class="caption">Full Assembly CAD</p>
-            </div>
+<div class="interactive-cad-container">
+    <img src="media/colorfulcadupdated.png" alt="BoxBot CAD Model" class="base-cad">
 
+    <svg class="cad-overlay" viewBox="0 0 1000 800">
+        
+        <line x1="220" y1="420" x2="80" y2="350" class="pointer-line" />
+        <a href="#drive-base">
+            <text x="10" y="340" class="hotspot-text">DRIVE BASE</text>
+        </a>
+
+        <line x1="720" y1="750" x2="780" y2="780" class="pointer-line" />
+        <a href="#scissor-lift">
+            <text x="750" y="795" class="hotspot-text">SCISSOR LIFT</text>
+        </a>
+
+        <line x1="575" y1="480" x2="500" y2="575" class="pointer-line" />
+        <a href="#center-plate">
+            <text x="400" y="600" class="hotspot-text">CENTER PLATE</text>
+        </a>
+        
+
+    </svg>
+</div>
+            
             <div class="mech-grid">
-                <div class="mech-subsystem">
+                <div class="mech-subsystem" id="drive-base">
                     <h3>1. Drive Base & Chassis</h3>
                     <p>The foundation consists of an aluminum baseplate supporting four 72mm Omni Wheels. This configuration enables holonomic movement for precise box alignment. Stability is augmented by roller ball transfer bearings positioned at key balance points.</p>
                 </div>
-                
 
-                <div class="mech-subsystem">
+                <div class="mech-subsystem" id="scissor-lift">
                     <h3>2. Scissor Lift Mechanism</h3>
                     <p>Two symmetrical scissor lifts provide vertical actuation. These are powered by 25kg high-torque digital servos. The mechanism utilizes linear ball bearings to maintain smooth vertical travel during the lifting phase.</p>
                 </div>
-                
 
-                <div class="mech-subsystem">
+                <div class="mech-subsystem" id="center-plate">
                     <h3>3. Center Plate & Power Housing</h3>
                     <p>The center plate acts as the structural bridge between the two drive pods. It houses the 24V 4Ah battery, positioned centrally to optimize the center of gravity. Electronics, including the Raspberry Pi 2 and Sabertooth driver, are mounted here for protection.</p>
                 </div>
 
-                <div class="mech-subsystem">
+                <div class="mech-subsystem" id="rack-pinion">
                     <h3>4. Rack and Pinion Lateral Adjustment</h3>
                     <p>To accommodate various box sizes, a rack and pinion system provides lateral movement. It features a 4ft metal gear rack with a 14-1/2 degree pressure angle and 32 pitch. This allows the arms to slide precisely along 8mm stainless steel rods.</p>
                 </div>
-                
             </div>
         </section>
     </div>

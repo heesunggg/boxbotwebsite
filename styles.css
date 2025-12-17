@@ -512,3 +512,63 @@ body {
     line-height: 1.6;
     color: #cbd5e0;
 }
+
+.interactive-cad-container {
+    position: relative;
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    /* Use a negative margin to shift the entire block UP */
+    margin-top: -50px; 
+    line-height: 0;
+    display: block;
+}
+
+.base-cad {
+    width: 100%;
+    display: block;
+    height: auto;
+    /* Keeps the glow effect on the transparent edges */
+    filter: drop-shadow(0 0 15px rgba(210, 105, 30, 0.4));
+}
+
+.cad-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.cad-overlay a {
+    pointer-events: all;
+}
+
+/* This pushes the text descriptions below the image back down slightly if they get too close */
+.mech-grid {
+    margin-top: 2rem;
+    position: relative;
+    z-index: 5;
+}
+
+.pointer-line {
+    stroke: #d2691e;
+    stroke-width: 3;
+    stroke-dasharray: 6; /* Dash effect for technical feel */
+}
+
+.hotspot-text {
+    fill: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.hotspot-text:hover {
+    fill: #d2691e;
+    filter: drop-shadow(0 0 5px #d2691e);
+}
