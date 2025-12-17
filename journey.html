@@ -94,28 +94,94 @@
             <h4>MECHANICAL</h4>
             <span class="expand-icon">+</span>
         </div>
-        <p class="box-preview">Designing the core U-shaped chassis and wooden prototyping.</p>
+        <p class="box-preview">Designing the U-shaped Chassis with 3D prints </p>
+            
     </div>
+
+        
 
     <div class="discipline-box elec" onclick="togglePhaseContent('p2-elec', this)">
         <div class="box-header">
             <h4>ELECTRICAL</h4>
             <span class="expand-icon">+</span>
         </div>
-        <p class="box-preview">Establishing the 24V power rail and logic power for the Pi 2.</p>
-    </div>
+        <p class="box-preview">Wiring and getting the robot to drive</p>
+    </div>  
 
     <div class="discipline-box soft" onclick="togglePhaseContent('p2-soft', this)">
         <div class="box-header">
             <h4>SOFTWARE</h4>
             <span class="expand-icon">+</span>
         </div>
-        <p class="box-preview">Developing low-level Python drivers and PWM motor control.</p>
+        <p class="box-preview">Getting basic functionality down</p>
     </div>
 
-    <div id="p2-mech" class="full-width-details">...</div>
-    <div id="p2-elec" class="full-width-details">...</div>
-    <div id="p2-soft" class="full-width-details">...</div>
+<div id="p2-mech" class="full-width-details">
+    <div class="initial-content-wrapper">
+        <div class="initial-sub">
+            <h5>Chassis Design with Rack and Pinion</h5>
+            <p>
+                Our goal was to validate the U-shaped drivetrain. Having designed based on the mini-project 3, 
+                we separated the two sections and added a rack and pinion on the other side. This rapid prototyping 
+                was able to help us test the squeeze functionality with the rack and pinion. The learnings that the 
+                mechanical team had was to switch to Omni Wheel, and have a middle section to keep the electrical in place.
+            
+            </p>
+        </div>
+        <div class="centered-image-container">
+            <img src="/media/firstcad.png" alt="Mechanical Prototype" class="journey-main-img">
+            <p class="img-caption">Initial U-shaped chassis CAD with 3D printed components</p>
+        </div>
+        <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+            <span>Show Less</span>
+            <span class="expand-icon">−</span>
+        </div>
+    </div>
+</div>
+
+<div id="p2-elec" class="full-width-details">
+    <div class="initial-content-wrapper">
+        <div class="initial-sub">
+            <h5>Driving the prototype</h5>
+            <p>
+                We had basis electrical based on the mini-project 3. We supply the power to the motor 
+                controller and Arduino. We also connected the motors to the motor controllers. 
+            </p>
+        </div>
+         <div class="centered-image-container">
+            <img src="media/elecsprint1.png" alt="Electrical Prototype" class="journey-main-img">
+            <p class="img-caption">Electrical Diagram of the prototype robot</p>
+        </div>
+        <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+            <span>Show Less</span>
+            <span class="expand-icon">−</span>
+        </div>
+    </div>
+</div>
+
+<div id="p2-soft" class="full-width-details">
+    <div class="initial-content-wrapper">
+        <div class="initial-sub">
+            <h5>Drive functionality </h5>
+            <p>
+                We got the basic driving functionality code done. We got forward, reverse, close, and 
+                release to all work. This was all controlled through serial connection. 
+
+            </p>
+        </div>
+        <div class="centered-image-container">
+            <video class="journey-main-img" controls muted loop>
+                <source src="media/jacksonsprint1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="img-caption">Video of our Sprint 1 Product driving</p>
+        </div>
+        <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+            <span>Show Less</span>
+            <span class="expand-icon">−</span>
+        </div>
+    </div>
+</div>
 </div>
                 </div>
 

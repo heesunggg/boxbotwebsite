@@ -1021,19 +1021,21 @@ html {
     margin-bottom: 0.5rem;
 }
 
+/* Centers the image and caption */
 .centered-image-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Pushes everything to the horizontal center */
+    align-items: center;
     width: 100%;
     margin: 2rem 0;
 }
 
 .journey-main-img {
-    max-width: 85%; /* Prevents the chart from being too wide/overwhelming */
+    max-width: 100%; 
     height: auto;
+    display: block;
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4); /* Adds depth to the chart */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .img-caption {
