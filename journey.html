@@ -283,8 +283,211 @@
                 </div>
             </div>
         </div>
-    </div> </div> ```
+    </div> </div> 
+    <div class="journey-phase" id="phase-4">
+    <div class="phase-header">
+        <span class="phase-number">04</span>
+        <h3>Phase 4: Update on Refining Resourcefully</h3>
+    </div>
 
+    <div class="phase-content">
+        <div class="discipline-box mech" onclick="togglePhaseContent('p4-mech', this)">
+            <div class="box-header">
+                <h4>MECHANICAL</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">Final drivebase assembly and scissor lift progress</p>
+        </div>
+
+        <div class="discipline-box elec" onclick="togglePhaseContent('p4-elec', this)">
+            <div class="box-header">
+                <h4>ELECTRICAL</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">Cable management and sensor calibration.</p>
+        </div>
+
+        <div class="discipline-box soft" onclick="togglePhaseContent('p4-soft', this)">
+            <div class="box-header">
+                <h4>SOFTWARE</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">Navigation tuning and error handling.</p>
+        </div>
+
+        <div id="p4-mech" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>Final Drivebase CAD</h5>
+                    <p>To start this phase, we updated the drivebase CAD where the linear rails sandwiched the rack and pinion system, the back caster wheels were attached, and the center plate became 5 inches longer.  </p>
+                    <p>Some of the changes we needed were the electrical covering as well as the electrical mounting plates. </p>
+
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/boxbotphasequarto.png" alt="Final Mechanical Assembly" class="journey-main-img">
+                    <p class="img-caption">CAD of the final Box Bot Drivebase</p>
+                </div>
+                <div class="initial-sub">
+                    <h5>Drivebase fabrication</h5>
+                    <p>Using 1/4" Aluminum 6061, we water jetted the drive-base plates, as well as the scissor lift arms. </p>
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/boxbotcoverphotofornow.png" alt="Final Mechanical Assembly" class="journey-main-img">
+                    <p class="img-caption">CAD of the final Box Bot Drivebase</p>
+                </div>
+                <div class="initial-sub">
+                    <h5>Scissor Lift Progress</h5>
+                    <p>The Scissor Lift has got some updates. They include the design adapting for the final lead screw and around space constraints, designing around the lead nuts, and the the 3D printed mounts.   </p>
+                    <p>Some things that are still in progress is the full assembly as well as we have to print the scoops. </p>
+
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/ihatewebsitedesign.png" alt="Final Mechanical Assembly" class="journey-main-img">
+                    <p class="img-caption">CAD of the updated Scissor Lift</p>
+                </div>
+
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="p4-elec" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>Wiring Finalization & Protection</h5>
+                    <p>We finalized cable routing to prevent interference with the moving rack and pinion. All logic level connections were secured with vibration-resistant connectors to ensure reliability during movement.</p>
+                </div>
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="p4-soft" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>System Tuning & Reliability Testing</h5>
+                    <p>Final software refinements focused on PID tuning for smooth motor acceleration and decelaration. We also implemented comprehensive error handling to manage sensor dropouts or mechanical stalls during the lift sequence.</p>
+                </div>
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="journey-phase" id="phase-5">
+    <div class="phase-header">
+        <span class="phase-number">05</span>
+        <h3>Pre-Demo Day: Further Refinement</h3>
+    </div>
+
+    <div class="phase-content">
+        <div class="discipline-box mech" onclick="togglePhaseContent('p5-mech', this)">
+            <div class="box-header">
+                <h4>MECHANICAL</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">DFM analysis and material optimization for production.</p>
+        </div>
+
+        <div class="discipline-box elec" onclick="togglePhaseContent('p5-elec', this)">
+            <div class="box-header">
+                <h4>ELECTRICAL</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">PCB fabrication and industrial-grade loom design.</p>
+        </div>
+
+        <div class="discipline-box soft" onclick="togglePhaseContent('p5-soft', this)">
+            <div class="box-header">
+                <h4>SOFTWARE</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">Cloud integration and multi-robot fleet logic.</p>
+        </div>
+
+
+        <div id="p5-mech" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>Design for Manufacturing (DFM)</h5>
+                    <p>To scale BoxBot, we analyzed the chassis for sheet metal bending instead of CNC milling to reduce cost. We also identified injection molding candidates for the rack guides to ensure part consistency.</p>
+                </div>
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="p5-summary" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>Transitioning to the Cloud</h5>
+                    <p>Phase 5 focuses on moving the local Raspberry Pi logic to a centralized server, allowing a fleet of BoxBots to share depth-map data for optimized warehouse navigation.</p>
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/scaling-concept.png" alt="Fleet Scaling Concept" class="journey-main-img">
+                    <p class="img-caption">Figure 9: Proposed fleet management architecture.</p>
+                </div>
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+
+    </div> </div> 
+<div class="journey-phase" id="phase-final">
+    <div class="phase-header">
+        <span class="phase-number">★</span>
+        <h3>Post-Demo Day: Final Showcase & Reflection</h3>
+    </div>
+
+    <div class="phase-content">
+        <div class="discipline-box initial-stage" onclick="togglePhaseContent('final-wrapup', this)">
+            <div class="box-header">
+                <h4>PROJECT COMPLETION</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">Final competition performance, key takeaways, and future improvements.</p>
+        </div>
+
+        <div id="final-wrapup" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>The Final Showcase</h5>
+                    <p>After four sprints of iteration, BoxBot successfully competed in the final demonstration. Our autonomous "detect and squeeze" logic performed reliably under varying lighting conditions, and the aluminum chassis handled the maximum payload without deflection.</p>
+                </div>
+
+                <div class="centered-image-container">
+                    <img src="media/final-boxbot-hero.png" alt="Final BoxBot Hero Shot" class="journey-main-img">
+                    <p class="img-caption">Figure 8: The final fully-assembled BoxBot ready for operation.</p>
+                </div>
+
+                <div class="initial-sub">
+                    <h5>Key Learnings & Future Iterations</h5>
+                    <ul>
+                        <li><strong>Weight Optimization:</strong> If we were to do it again, we would use thinner aluminum or carbon fiber to increase battery life.</li>
+                        <li><strong>Sensor Upgrades:</strong> Transitioning from a single depth camera to a LiDAR-based system would improve navigation in tight warehouse spaces.</li>
+                        <li><strong>Mechanism Speed:</strong> Increasing the gear ratio on the rack and pinion would speed up the 'squeeze' sequence.</li>
+                    </ul>
+                </div>
+
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
     function togglePhaseContent(contentId, btn) {
         const parent = btn.parentElement;
