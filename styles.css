@@ -1042,3 +1042,30 @@ html {
     color: #a0aec0;
     text-align: center;
 }
+
+/* ------------------- BOTTOM COLLAPSE TRIGGER ------------------- */
+.collapse-trigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a0aec0;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.collapse-trigger:hover {
+    color: #d2691e;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.collapse-trigger .expand-icon {
+    font-size: 1.5rem;
+    line-height: 0;
+}

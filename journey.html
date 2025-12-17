@@ -78,12 +78,16 @@
             <div class="sub-image">
                 <img src="media/uglyahideationboard.png" alt="Project Pugh Matrix Chart" class="journey-inline-img">
                 <p class="img-caption">Figure 3: Ideation board</p>
-            </div>
-        </div>
-        
-
-    </div>
 </div>
+            </div>
+
+            <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                <span>Show Less</span>
+                <span class="expand-icon">−</span>
+            </div>
+</div>
+</div>
+
 
     <div class="discipline-box mech" onclick="togglePhaseContent('p2-mech', this)">
         <div class="box-header">
@@ -191,6 +195,21 @@
             btn.classList.add('active-btn');
         }
     }
+    function closeAllInPhase(element) {
+    // 1. Find the phase-content container this button belongs to
+    const phaseContent = element.closest('.phase-content');
+    
+    // 2. Find all details and buttons in this phase
+    const allContent = phaseContent.querySelectorAll('.full-width-details');
+    const allButtons = phaseContent.querySelectorAll('.discipline-box');
+
+    // 3. Remove the 'open' and 'active-btn' classes
+    allContent.forEach(c => c.classList.remove('open'));
+    allButtons.forEach(b => b.classList.remove('active-btn'));
+    
+    // 4. Smooth scroll back up to the top of the phase (optional but helpful)
+    phaseContent.closest('.journey-phase').scrollIntoView({ behavior: 'smooth' });
+}
     </script>
 </body>
 </html>
