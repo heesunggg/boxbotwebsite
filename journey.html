@@ -13,12 +13,12 @@
         <a href="mechanical.html">Mechanical</a>
         <a href="software.html">Software/Firmware</a>
         <a href="budget.html">Budget (BOM)</a>
-        <a href="journey.html">Journey</a>
+        <a href="journey.html">Journey & Design Process</a>
     </nav>
 
     <div class="main-content">
         <section class="section">
-            <h2>Journey through the Sprints/Phases</h2>
+            <h2>Journey & design process</h2>
             <p class="summary-text">This is the documentation of BoxBot evolved over time, from a concept to a fully autonomous cardboard moving system.  </p>
 
             <div class="timeline">
@@ -32,10 +32,10 @@
                     <div class="phase-content">
     <div class="discipline-box initial-stage" onclick="togglePhaseContent('p2-initial', this)">
         <div class="box-header">
-            <h4>INITIAL STAGES</h4>
+            <h4>INITIAL STAGES & DESIGN PROCESS</h4>
             <span class="expand-icon">+</span>
         </div>
-        <p class="box-preview">Group formation, timeline managements, and honing down on a singular idea.</p>
+        <p class="box-preview">Group formation, timeline managements, and design process.</p>
     </div>
 
     <div id="p2-initial" class="full-width-details">
@@ -64,7 +64,7 @@
                 <div class="initial-sub">
             <div class="sub-text">
                 <h5>Honing a Singular Idea</h5>
-            <p>We had many ideas, such as a Red Light Green Light Robot, CNC Tube Notcher, wall climbing robot, and more. Using a Pugh Matrix, we ended up with <strong>BoxBot.</strong> At this current stage, we didn't know exactly how we wanted to manipulate the box. </p>
+            <p>We had many ideas, such as a Red Light Green Light Robot, CNC Tube Notcher, wall climbing robot, and more. Using a Pugh Matrix, we ended up with <strong>BoxBot</strong> because it was something that everyone was committed to do, it was complex, and it was scalable to be more difficult/easier. At this current stage, we didn't know exactly how we wanted to manipulate the box. </p>
             </div>
             <div class="sub-image">
                 <img src="media/newpughmatrix.png" alt="Project Pugh Matrix Chart" class="journey-inline-img">
@@ -75,10 +75,43 @@
             <div class="sub-text">
                 <h5>Figuring out the weeds</h5>
 <p>After settling on what we wanted the project to do, we spent several days figuring out what mechanism we wanted on the BoxBot. After several hours, we ended up with a U shaped robot, where the sides will be moved by a <strong>rack and pinion system</strong> while the box will be lifted up through a <strong></strong> mechanism. </p>            </div>
-            <div class="sub-image">
+                <div class="sub-image">
                 <img src="media/uglyahideationboard.png" alt="Project Pugh Matrix Chart" class="journey-inline-img">
                 <p class="img-caption">Figure 3: Ideation board</p>
-</div>
+                </div>
+            </div>
+
+                <div class="initial-sub">
+            <div class="sub-text">
+                <h5>Design Process</h5>
+                <p>Although we will dive deeper into the design in itself throughout this website, there were several design
+                    decisions we had to come up with. 
+                    <ul>
+                        <li><strong>Chassis Geometry:</strong> Originally, we wanted to lift the box in front of the robot.
+                        However, we came to the conclusion that it was too similar to a forklift. Because this was something 
+                        that we didn't want to do, and that we wanted to make something more unique, we decided to lift the box 
+                        by sandwiching it. This made the design decision as a <strong>U-shaped Chassis.</strong>
+
+                        
+                        </li>
+                        <li><strong>Box manipulation: </strong> Since we figured out we wanted a U-shaped Chassis, we then had to 
+                        figure out how exactly we wanted the robot to be in contact with it. We knew that the 2 sides of the chassis 
+                        had to squeeze, but we were deciding between a scissor lift that open and closes left, a rack and pinion system, 
+                        and a belt system. We decided to go with a <strong>rack and pinion system</strong> because this was something 
+                        we could rapidly test and 3D print. We had to wait for the belt system, so we came to the conclusion that rapid 
+                        iteration will be more worthwhile.
+                        </li>
+                        </li>
+                        <li><strong>Box Lifting: </strong> We had to figure out how we wanted to lift a box. We ended up with a <strong>scissor lift mechanism </strong>
+                        on both sides. Since we had supports of both sides, we figured we can have a lift plate that gets under the cardboard box.
+                        </li>
+                    </ul>
+
+
+                </p>    
+                        
+            </div>
+
             </div>
 
             <div class="collapse-trigger" onclick="closeAllInPhase(this)">
@@ -203,7 +236,7 @@
                 <h4>ELECTRICAL</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">Integrating high-power components and safety.</p>
+            <p class="box-preview">UNDER PROGRESS</p>
         </div>
 
         <div class="discipline-box soft" onclick="togglePhaseContent('p3-soft', this)">
@@ -211,7 +244,7 @@
                 <h4>SOFTWARE</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">Autonomous navigation and sensor fusion logic.</p>
+            <p class="box-preview">UNDER PROGRESS</p>
         </div>
 
         <div id="p3-mech" class="full-width-details">
@@ -304,7 +337,7 @@
                 <h4>ELECTRICAL</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">Cable management and sensor calibration.</p>
+            <p class="box-preview">UNDER PROGRESS</p>
         </div>
 
         <div class="discipline-box soft" onclick="togglePhaseContent('p4-soft', this)">
@@ -312,7 +345,7 @@
                 <h4>SOFTWARE</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">Navigation tuning and error handling.</p>
+            <p class="box-preview">UNDER PROGRESS</p>
         </div>
 
         <div id="p4-mech" class="full-width-details">
@@ -393,7 +426,7 @@
                 <h4>MECHANICAL</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">DFM analysis and material optimization for production.</p>
+            <p class="box-preview">Final Touches on Drivebase and Scissor Lift</p>
         </div>
 
         <div class="discipline-box elec" onclick="togglePhaseContent('p5-elec', this)">
@@ -401,7 +434,7 @@
                 <h4>ELECTRICAL</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">PCB fabrication and industrial-grade loom design.</p>
+            <p class="box-preview">UNDER PROGRESS</p>
         </div>
 
         <div class="discipline-box soft" onclick="togglePhaseContent('p5-soft', this)">
@@ -409,16 +442,30 @@
                 <h4>SOFTWARE</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">Cloud integration and multi-robot fleet logic.</p>
+            <p class="box-preview">UNDER PROGRESS</p>
         </div>
 
 
         <div id="p5-mech" class="full-width-details">
             <div class="initial-content-wrapper">
                 <div class="initial-sub">
-                    <h5>Design for Manufacturing (DFM)</h5>
-                    <p>To scale BoxBot, we analyzed the chassis for sheet metal bending instead of CNC milling to reduce cost. We also identified injection molding candidates for the rack guides to ensure part consistency.</p>
+                    <h5>Electrical Covering For the Center Plate</h5>
+                    <p>In order to protect and make our final product clean, we decided to make electrical covering and mounts for the plate. Starting with the electrical mounts, we measured all of the different electrical components to press fit into the 3D print. We also created electrical covers that had holes opening for only the E-Stop. </p>
                 </div>
+                <div class="centered-image-container">
+                    <img src="media/holycovering.png" alt="Final Mechanical Assembly" class="journey-main-img">
+                    <p class="img-caption">CAD the electrical covering</p>
+                </div>
+
+                <div class="initial-sub">
+                    <h5>Scissor Lift Design and Assembly</h5>
+                    <p>We fully implemented our final scissor lift design and solved several issues that arose during integration. Mainly, we had to figure out spacing issues to fit the servo motors with the DC motors. We went through several iterations of mounts before arriving at a design that would comply with the DC motors without sacrificing over all lift height. One we had everything packaged properly, we worked to improve the overall stability of the scissor lift. The final piece of implementation was fixing the lift plate to the lift arms. </p>
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/scissorliftfinalizedlollll.jpg" alt="Final Mechanical Assembly" class="journey-main-img">
+                    <p class="img-caption">Assembly of the Scissor lift</p>
+                </div>
+
                 <div class="collapse-trigger" onclick="closeAllInPhase(this)">
                     <span>Show Less</span>
                     <span class="expand-icon">−</span>
