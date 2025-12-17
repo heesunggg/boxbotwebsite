@@ -572,3 +572,112 @@ body {
     fill: #d2691e;
     filter: drop-shadow(0 0 5px #d2691e);
 }
+
+
+/* ------------------- VERTICAL MECHANICAL ROWS ------------------- */
+
+.mech-vertical-stack {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem; /* Large gap between subsystems */
+}
+
+.mech-row {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    background: rgba(45, 55, 72, 0.3);
+    border-radius: 12px;
+    border-left: 5px solid #d2691e;
+}
+
+/* Flip the middle section so image is on the left */
+.mech-row.reverse {
+    flex-direction: row-reverse;
+    border-left: none;
+    border-right: 5px solid #d2691e;
+}
+
+.mech-info {
+    flex: 1;
+}
+
+.mech-info h3 {
+    font-size: 2rem;
+    color: #d2691e;
+    margin-bottom: 1rem;
+}
+
+.mech-info p {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+}
+
+.mech-info ul {
+    list-style: none; /* We will add custom bullets */
+}
+
+.mech-info li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #cbd5e0;
+    line-height: 1.5;
+}
+
+/* Custom technical bullet point */
+.mech-info li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #d2691e;
+    font-size: 0.8rem;
+    top: 5px;
+}
+
+.mech-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.mech-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #4a5568;
+    transition: transform 0.3s ease;
+}
+
+.mech-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 900px) {
+    .mech-row, .mech-row.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .mech-info li {
+        text-align: left;
+    }
+}
+
+/* 1. Global Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Offset for Fixed Navigation */
+/* Adjust the 100px value based on the actual height of your nav bar */
+.mech-row {
+    scroll-margin-top: 100px; 
+}
+
+/* Optional: If you find it still feels too fast, 
+   some browsers allow you to define the scroll duration 
+   via JavaScript, but CSS is the cleanest starting point. */

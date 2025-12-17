@@ -49,27 +49,52 @@
     </svg>
 </div>
             
-            <div class="mech-grid">
-                <div class="mech-subsystem" id="drive-base">
-                    <h3>1. Drive Base & Chassis</h3>
-                    <p>The foundation consists of an aluminum baseplate supporting four 72mm Omni Wheels. This configuration enables holonomic movement for precise box alignment. Stability is augmented by roller ball transfer bearings positioned at key balance points.</p>
-                </div>
+<div class="mech-vertical-stack">
+    <div class="mech-row" id="drive-base">
+        <div class="mech-info">
+            <h3>Drive Base</h3>
+            <p>The foundation of BoxBot is a holonomic drive system designed for high maneuverability in constrained environments.</p>
+            <ul>
+                <li>**Omni-Directional Movement**: Utilizes four 72mm Omni Wheels to allow for lateral and diagonal alignment.</li>
+                <li>**Stability**: Includes Roller Ball Transfer Bearings at key balance points to prevent tipping during heavy lifts.</li>
+                <li>**Material**: Constructed from 1/4" 6061 Aluminum for a rigid, low-flex platform.</li>
+            </ul>
+        </div>
+        <div class="mech-image">
+            <img src="media/drive-base-detail.png" alt="Drive Base CAD Detail">
+        </div>
+    </div>
 
-                <div class="mech-subsystem" id="scissor-lift">
-                    <h3>2. Scissor Lift Mechanism</h3>
-                    <p>Two symmetrical scissor lifts provide vertical actuation. These are powered by 25kg high-torque digital servos. The mechanism utilizes linear ball bearings to maintain smooth vertical travel during the lifting phase.</p>
-                </div>
+    <div class="mech-row reverse" id="center-plate">
+        <div class="mech-info">
+            <h3>Center Plate & Power Housing</h3>
+            <p>The center plate serves as the structural bridge and the primary housing for heavy electronics and power cells.</p>
+            <ul>
+                <li>**Weight Distribution**: Houses the 24V 4Ah battery centrally to optimize the center of gravity.</li>
+                <li>**Electronics Protection**: Provides a secure mounting surface for the Raspberry Pi 2 and Sabertooth motor driver.</li>
+                <li>**Circuit Safety**: Integrates a 6-Circuit LED Blade Fuse Block for immediate visual diagnostics and protection.</li>
+            </ul>
+        </div>
+        <div class="mech-image">
+            <img src="media/center-plate-detail.png" alt="Center Plate CAD Detail">
+        </div>
+    </div>
 
-                <div class="mech-subsystem" id="center-plate">
-                    <h3>3. Center Plate & Power Housing</h3>
-                    <p>The center plate acts as the structural bridge between the two drive pods. It houses the 24V 4Ah battery, positioned centrally to optimize the center of gravity. Electronics, including the Raspberry Pi 2 and Sabertooth driver, are mounted here for protection.</p>
-                </div>
-
-                <div class="mech-subsystem" id="rack-pinion">
-                    <h3>4. Rack and Pinion Lateral Adjustment</h3>
-                    <p>To accommodate various box sizes, a rack and pinion system provides lateral movement. It features a 4ft metal gear rack with a 14-1/2 degree pressure angle and 32 pitch. This allows the arms to slide precisely along 8mm stainless steel rods.</p>
-                </div>
-            </div>
+    <div class="mech-row" id="scissor-lift">
+        <div class="mech-info">
+            <h3>Scissor Lift Mechanism</h3>
+            <p>A symmetrical dual-scissor system provides the vertical displacement needed to handle standard cardboard boxes.</p>
+            <ul>
+                <li>**High Torque Actuation**: Driven by 25kg digital servos to ensure reliable lifting under load.</li>
+                <li>**Precision Travel**: Employs linear ball bearings and 8mm stainless steel rods to eliminate binding.</li>
+                <li>**Lateral Adjustment**: Integrated with a 32-pitch rack and pinion system to adjust for various box widths.</li>
+            </ul>
+        </div>
+        <div class="mech-image">
+            <img src="media/scissor-lift-detail.png" alt="Scissor Lift CAD Detail">
+        </div>
+    </div>
+</div>
         </section>
     </div>
 </body>
