@@ -43,7 +43,7 @@
         
         <div class="initial-sub">
             <h5>Group Formation & Roles</h5>
-            <p>Our team came together because of our interest in creating a strong project to put on our personal websites. When discussing project teaming and agreement, we came up with these following rules:    </p>
+            <p>Our team came together because of our interest in creating a strong project to put on our personal portfolio. When discussing project teaming and agreement, we came up with these following rules:    </p>
             <ul>
                 <li><strong>Commitment</strong>: Spend 5-7 hours outside of class on a typical week, 30-40 hours in the last week.</li>
                 <li><strong>Expectations</strong>: Call people out if someone is slacking off, and if it gets worse, involve the teaching team.</li>
@@ -97,8 +97,6 @@
         <p class="box-preview">Designing the U-shaped Chassis with 3D prints </p>
             
     </div>
-
-        
 
     <div class="discipline-box elec" onclick="togglePhaseContent('p2-elec', this)">
         <div class="box-header">
@@ -185,63 +183,107 @@
 </div>
                 </div>
 
-                <div class="journey-phase" id="phase-3">
-                    <div class="phase-header">
-                        <span class="phase-number">03</span>
-                        <h3>Phase 3: System Integration</h3>
-                    </div>
-                    
-                    <div class="phase-content">
-                        <div class="discipline-box mech" onclick="togglePhaseContent('p3-mech', this)">
-                            <div class="box-header">
-                                <h4>MECHANICAL</h4>
-                                <span class="expand-icon">+</span>
-                            </div>
-                            <p class="box-preview">Assembling primary load-bearing and lift systems.</p>
-                        </div>
+<div class="journey-phase" id="phase-3">
+    <div class="phase-header">
+        <span class="phase-number">03</span>
+        <h3>Phase 3: Update on Integrating, Reflecting, and Iterating</h3>
+    </div>
 
-                        <div class="discipline-box elec" onclick="togglePhaseContent('p3-elec', this)">
-                            <div class="box-header">
-                                <h4>ELECTRICAL</h4>
-                                <span class="expand-icon">+</span>
-                            </div>
-                            <p class="box-preview">Integrating high-power components and safety.</p>
-                        </div>
+    <div class="phase-content">
+        <div class="discipline-box mech" onclick="togglePhaseContent('p3-mech', this)">
+            <div class="box-header">
+                <h4>MECHANICAL</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">Drivebase and Scissor lift Updates</p>
+        </div>
 
-                        <div class="discipline-box soft" onclick="togglePhaseContent('p3-soft', this)">
-                            <div class="box-header">
-                                <h4>SOFTWARE</h4>
-                                <span class="expand-icon">+</span>
-                            </div>
-                            <p class="box-preview">Autonomous navigation and sensor fusion logic.</p>
-                        </div>
+        <div class="discipline-box elec" onclick="togglePhaseContent('p3-elec', this)">
+            <div class="box-header">
+                <h4>ELECTRICAL</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">Integrating high-power components and safety.</p>
+        </div>
 
-                        <div id="p3-mech" class="full-width-details">
-                            <ul>
-                                <li>Installed 8mm stainless steel rods and linear ball bearings.</li>
-                                <li>Assembled 32-pitch rack and pinion for width adjustment.</li>
-                                <li>Mounted 72mm Omni Wheels for holonomic movement.</li>
-                            </ul>
-                        </div>
+        <div class="discipline-box soft" onclick="togglePhaseContent('p3-soft', this)">
+            <div class="box-header">
+                <h4>SOFTWARE</h4>
+                <span class="expand-icon">+</span>
+            </div>
+            <p class="box-preview">Autonomous navigation and sensor fusion logic.</p>
+        </div>
 
-                        <div id="p3-elec" class="full-width-details">
-                            <ul>
-                                <li>Wired the 24V battery through the Sabertooth 2x12 driver.</li>
-                                <li>Integrated a 6-circuit LED blade fuse block for safety.</li>
-                            </ul>
-                        </div>
-
-                        <div id="p3-soft" class="full-width-details">
-                            <ul>
-                                <li>Fused RealSense depth data for obstacle avoidance.</li>
-                                <li>Implemented state-machine for "detect, approach, squeeze".</li>
-                            </ul>
-                        </div>
-                    </div>
+        <div id="p3-mech" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>V1 Drivebase updates</h5>
+                    <p>Throughout phase 3, we went through 2 different iterations of the design. <strong>Version 1</strong> had a rack and pinion system driven by a stepper motor, where we left room for electrical in the back. We also added omni wheels for easier side to side movement with multi-directional caster wheels to support the weight of the robot and the box.</p>
+                    <p>Some of the changes we needed to make was that the caster wheel was misaligned with the omni wheels, the necessity of linear rails for stability and precision, Camera Mounts for Vision, and a better support system for the rack so it doesn't wobble.</p>
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/drivebase1stufflol.png" alt="Mechanical Prototype" class="journey-main-img">
+                    <p class="img-caption">V1 of the Drive Base made of laser cut and 3D printed parts</p>
+                </div>
+                <div class="initial-sub">
+                    <h5>V2 Drivebase updates</h5>
+                    <p>For <strong>version 2</strong>, we added linear rails for stability, and made sure that the omni wheels and the caster wheels were designed to keep the robot parallel and as low to the ground as possible. We also added the 3 caster wheels on the center plate for more support. Something that we also worked on was keeping the rack stable, so we created rack guides that helped stabilize the drive base. The camera mount was designed as well.</p>
+                    <p>Some of the changes we need to make was a adjustable camera mount, have extra caster wheels on the drivebases, and make space for electrical mounting. We also needed longer linear rails, and have the linear rails sandwich the rack and pinion system.</p>
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/manthissuckssosad.png" alt="Mechanical Prototype" class="journey-main-img">
+                    <p class="img-caption">V2 of the Drive Base made of laser cut and 3D printed parts</p>
+                </div>
+                <div class="initial-sub">
+                    <h5>Scissor lift updates</h5>
+                    <p>For the <strong>scissor lift design</strong>, we used a lead screw, where we were projected 1 inch of lift. We used 3D prints and wooden prototypes to create this.</p>
+                    <p>Some of the changes that we needed to do was optimize the brackets, and we had to design for a full lead screw instead of a bolts.</p>
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/scissorliftfirstcadlol.png" alt="Mechanical Prototype" class="journey-main-img">
+                    <p class="img-caption">Scissor lift CAD</p>
+                </div>
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+
+        <div id="p3-elec" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>High-Power Integration & Safety</h5>
+                    <p>In Phase 3, we finalized the power distribution by wiring the 24V battery through a Sabertooth 2x12 motor driver. To ensure system longevity and safety, we integrated a 6-circuit LED blade fuse block, protecting individual subsystems from overcurrent.</p>
+                    <ul>
+                        <li><strong>Sabertooth 2x12:</strong> Independent channel motor control.</li>
+                        <li><strong>Fuse Block:</strong> Safety protection for the Pi 2 and sensors.</li>
+                    </ul>
+                </div>
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="p3-soft" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>Sensor Fusion & Autonomous Logic</h5>
+                    <p>The software evolved from basic serial control to a robust state-machine logic. We fused RealSense depth data to enable obstacle avoidance and implemented a "detect, approach, and squeeze" sequence for autonomous box handling.</p>
+                    <ul>
+                        <li><strong>RealSense Fusion:</strong> Maps environment for avoidance.</li>
+                        <li><strong>State Machine:</strong> Automates navigation to manipulation.</li>
+                    </ul>
+                </div>
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+    </div> </div> ```
 
     <script>
     function togglePhaseContent(contentId, btn) {
