@@ -426,3 +426,89 @@ body {
     color: #ffd700; /* Gold for the grand total */
     background-color: rgba(26, 32, 44, 0.8);
 }
+
+
+/* ------------------- MECHANICAL PAGE STYLING ------------------- */
+.mech-subsystem {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #d2691e;
+    border-radius: 0 8px 8px 0;
+}
+
+.mech-subsystem h3 {
+    color: #d2691e;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.mech-subsystem p {
+    color: #cbd5e0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.video-container img {
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 1px solid #4a5568;
+}
+
+
+/* ------------------- MECHANICAL STYLING ------------------- */
+
+.transparent-cad-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    /* This ensures the transparent background of your PNG is visible */
+    background: transparent; 
+}
+
+.transparent-cad-container img {
+    max-width: 100%;
+    height: auto;
+    /* Optional: adds a subtle glow behind your transparent CAD */
+    filter: drop-shadow(0 0 15px rgba(210, 105, 30, 0.2)); 
+}
+
+.caption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 15px;
+    color: #a0aec0;
+}
+
+.mech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.mech-subsystem {
+    background: rgba(45, 55, 72, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 3px solid #d2691e;
+    transition: transform 0.3s ease;
+}
+
+.mech-subsystem:hover {
+    transform: translateY(-5px);
+    background: rgba(45, 55, 72, 0.8);
+}
+
+.mech-subsystem h3 {
+    color: #d2691e;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.mech-subsystem p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cbd5e0;
+}

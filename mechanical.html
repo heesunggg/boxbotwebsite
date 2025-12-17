@@ -4,79 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoxBot - Mechanical Design</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="sections.css"> 
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="detail-body">
-    
-<nav class="nav">
-    <a href="#home">Home</a>
-    <a href="#summary">Project Summary</a>
-    <a href="#diagrams">System Architecture</a>
-    <a href="#sections">Project Details</a>
-    <a href="#team-section">Our Team</a>
-</nav>
+<body>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="electrical.html">Electrical</a>
+        <a href="mechanical.html">Mechanical</a>
+        <a href="software.html">Software/Firmware</a>
+        <a href="budget.html">Budget (BOM)</a>
+        <a href="journey.html">Journey</a>
+    </nav>
 
-    <div class="detail-page-container">
-        
-        <a href="index.html" class="back-button">← Back to Home Summary</a>
-        
-        <h2>⚙️ Detailed Mechanical Design and Analysis</h2>
-        <p class="intro-paragraph">The BoxBot chassis and lifting mechanism were designed for stability, high payload capacity relative to size, and efficient maneuverability on flat surfaces. This section details the rationale for key structural choices and provides the necessary documentation for replication.</p>
+    <div class="main-content">
+        <section class="section">
+            <h2>Mechanical Design & CAD</h2>
+            <p class="summary-text">
+                This is the CAD of BoxBot. We decided that we wanted the drivebase to be as low to the 
+                ground as possible, squeeze the box with with a rack and pinion system, and lift up the box 
+                with a scissor lift mechanism. 
+            </p>
 
-        <section class="detail-section">
-            <h3>1. Final Chassis and Assembly Overview</h3>
-            <p>Our final design utilizes a three-wheel differential drive configuration for reliable movement and precision steering. The chassis frame is constructed primarily from [Material, e.g., laser-cut ABS/Aluminum] to achieve an optimal balance of rigidity and weight. The key component visuals are shown below.</p>
-            
-            <div class="visual-gallery">
-                <div class="visual-box">
-                    <img src="media/cad_render_isometric.png" alt="Isometric CAD rendering of BoxBot" class="detail-image">
-                    <figcaption>Figure 1.1: Isometric CAD Rendering of the Final BoxBot Assembly. </figcaption>
-                </div>
-                <div class="visual-box">
-                    <img src="media/cad_exploded_view.png" alt="Exploded view of the chassis assembly" class="detail-image">
-                    <figcaption>Figure 1.2: Exploded view detailing key mechanical components and fasteners. </figcaption>
-                </div>
+            <div class="transparent-cad-container">
+                <img src="media/colorfulcadupdated.png" alt="BoxBot CAD Model">
+                <p class="caption">Full Assembly CAD</p>
             </div>
-            
-            <p><strong>Key Design Parameters:</strong></p>
-            <ul>
-                <li><strong>Dimensions:</strong> [Length] x [Width] x [Height]</li>
-                <li><strong>Weight (Unloaded):</strong> [Weight] kg</li>
-                <li><strong>Max Payload:</strong> [Max Weight] kg (Cardboard Box)</li>
-            </ul>
-        </section>
 
-        <section class="detail-section">
-            <h3>2. Lifting Mechanism and Gripper Analysis</h3>
-            <p>The system employs a [Type of Mechanism, e.g., parallel four-bar linkage] powered by a [Type of Motor, e.g., geared DC motor] to achieve vertical lift. The gripper utilizes [Method, e.g., passive friction grips or powered clamp] optimized for the specific dimensions of the target cardboard box.</p>
-            
-            <h4>2.1. Structural Rationale and Trade-offs</h4>
-            <p>Initial designs considered a scissor lift, but we ultimately chose the [Final Mechanism] due to its [Reason 1, e.g., lower part count] and [Reason 2, e.g., superior lateral stability] under eccentric loading. This choice directly impacted our material budget, allowing us to allocate more funds to motor power.</p>
-            
-            <div class="visual-gallery">
-                <div class="visual-box">
-                    <img src="media/gripper_design.png" alt="Close-up of the gripper/lift mechanism" class="detail-image">
-                    <figcaption>Figure 2.1: Detail of the BoxBot Gripping Interface.</figcaption>
+            <div class="mech-grid">
+                <div class="mech-subsystem">
+                    <h3>1. Drive Base & Chassis</h3>
+                    <p>The foundation consists of an aluminum baseplate supporting four 72mm Omni Wheels. This configuration enables holonomic movement for precise box alignment. Stability is augmented by roller ball transfer bearings positioned at key balance points.</p>
                 </div>
+                
+
+                <div class="mech-subsystem">
+                    <h3>2. Scissor Lift Mechanism</h3>
+                    <p>Two symmetrical scissor lifts provide vertical actuation. These are powered by 25kg high-torque digital servos. The mechanism utilizes linear ball bearings to maintain smooth vertical travel during the lifting phase.</p>
+                </div>
+                
+
+                <div class="mech-subsystem">
+                    <h3>3. Center Plate & Power Housing</h3>
+                    <p>The center plate acts as the structural bridge between the two drive pods. It houses the 24V 4Ah battery, positioned centrally to optimize the center of gravity. Electronics, including the Raspberry Pi 2 and Sabertooth driver, are mounted here for protection.</p>
+                </div>
+
+                <div class="mech-subsystem">
+                    <h3>4. Rack and Pinion Lateral Adjustment</h3>
+                    <p>To accommodate various box sizes, a rack and pinion system provides lateral movement. It features a 4ft metal gear rack with a 14-1/2 degree pressure angle and 32 pitch. This allows the arms to slide precisely along 8mm stainless steel rods.</p>
+                </div>
+                
             </div>
         </section>
-        
-        <section class="detail-section">
-            <h3>3. Load Bearing and Stress Analysis</h3>
-            <p>To ensure structural integrity under maximum load, a simplified static load analysis was performed on the main chassis supports and the lift arm pivot points. The maximum expected force on the pivot joint is calculated as $F_{max} = m_{load} \cdot g + F_{dynamic}$.</p>
-            
-            <p>The chosen [Material, e.g., Plywood/Aluminum] provides a safety factor of $S_f = \frac{\sigma_{yield}}{\sigma_{max}} \approx 3.0$, which is acceptable for educational prototyping constraints.</p>
-            
-            <div class="visual-gallery">
-                 <div class="visual-box">
-                    <img src="media/fea_stress_diagram.png" alt="Stress diagram of the critical mechanical part" class="detail-image">
-                    <figcaption>Figure 3.1: Finite Element Analysis (FEA) showing stress distribution on the lift arms under maximum load.</figcaption>
-                    
-                </div>
-            </div>
-        </section>
-
     </div>
 </body>
 </html>
