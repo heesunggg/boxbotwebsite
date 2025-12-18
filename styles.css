@@ -207,23 +207,33 @@ body {
     font-size: 1.5rem;
 }
 
-/* Force all diagrams to fit inside their white boxes */
+/* Force images to scale down to fit their containers */
 .diagram-placeholder img {
-    width: 100%;       /* Scaled to match the container width */
-    height: auto;      /* Maintain correct aspect ratio */
-    display: block;    /* Remove unwanted bottom spacing */
-    border-radius: 8px; /* Optional: matches the smooth look of your site */
+    width: 100%;       /* Fills the container width */
+    max-width: 100%;   /* Never exceeds the container width */
+    height: auto;      /* Maintains proper aspect ratio */
+    display: block;    /* Removes extra whitespace at the bottom */
 }
 
-/* Ensure the container itself doesn't allow overflow */
+/* Force ALL project images to respect their container width */
+.hero-image img, 
+.diagram-placeholder img,
+.journey-main-img {
+    max-width: 100%;   /* Never allow image to be wider than the blue/white box */
+    height: auto;      /* Prevents stretching or squishing */
+    display: block;    /* Removes the small gap at the bottom of images */
+    margin: 0 auto;    /* Centers the image if it's smaller than the box */
+}
+
+/* Ensure the white diagram boxes clip overflow */
 .diagram-placeholder {
     width: 100%;
     overflow: hidden; 
     display: flex;
     justify-content: center;
-    background-color: #f5f5f5; /* Maintain that clean light grey/white background */
+    background-color: #f5f5f5; /* Maintain clean contrast */
     padding: 10px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Includes padding in width calculation */
 }
 /* ------------------- SECTION LINKS CARDS ------------------- */
 .section-links {
