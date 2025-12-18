@@ -187,19 +187,18 @@ body {
     background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
 }
 
+/* Update the diagram container to stack items vertically */
 .diagram-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 3rem;
-    margin: 3rem 0;
+    display: flex;
+    flex-direction: column; /* This stacks them on top of each other */
+    gap: 2rem;             /* Adds a clean gap between the two diagrams */
+    width: 100%;           /* Ensures they take up the full narrow width */
 }
 
+/* Ensure individual boxes take up the full width of the container */
 .diagram-box {
-    background: white;
-    border: 2px solid #d2691e;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 100%;
 }
 
 .diagram-box h3 {
@@ -208,17 +207,24 @@ body {
     font-size: 1.5rem;
 }
 
-.diagram-placeholder {
-    background: #f5f5f5;
-    height: 400px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-    font-style: italic;
+/* Force all diagrams to fit inside their white boxes */
+.diagram-placeholder img {
+    width: 100%;       /* Scaled to match the container width */
+    height: auto;      /* Maintain correct aspect ratio */
+    display: block;    /* Remove unwanted bottom spacing */
+    border-radius: 8px; /* Optional: matches the smooth look of your site */
 }
 
+/* Ensure the container itself doesn't allow overflow */
+.diagram-placeholder {
+    width: 100%;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5; /* Maintain that clean light grey/white background */
+    padding: 10px;
+    box-sizing: border-box;
+}
 /* ------------------- SECTION LINKS CARDS ------------------- */
 .section-links {
     display: grid;
@@ -1112,4 +1118,61 @@ html {
     list-style: none;
     padding: 10px 0;
     margin: 0;
+}
+
+
+/* Container for the 50/50 split */
+.hero-section {
+    display: flex;
+    align-items: flex-start; /* Aligns content to the top */
+    justify-content: center;
+    gap: 40px; /* Provides breathing room between columns */
+    padding: 2rem 0;
+}
+
+/* Force both sides to exactly 50% width */
+.hero-text, .hero-image {
+    flex: 1; /* Sets equal flex-grow and basis for a true half-half split */
+    width: 50%;
+}
+
+.hero-image {
+    text-align: center;
+}
+
+/* Maintain image scaling so it doesn't bleed off screen */
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #d2691e;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Mobile responsive: Stack them vertically on smaller screens */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+    }
+    .hero-text, .hero-image {
+        width: 100%;
+    }
+}
+/* Tighten the gap between the summary content and the next header */
+.hero-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 1.5rem; /* Reduced from default to close the gap */
+}
+
+/* Ensure the Demonstration header doesn't have massive top padding */
+#summary h3 {
+    margin-top: 1rem !important; /* Forces the header closer to the content above */
+    padding-top: 0;
+}
+
+/* Ensure the summary container itself doesn't have extra bottom padding */
+.summary-text {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
