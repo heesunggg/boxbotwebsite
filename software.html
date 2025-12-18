@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxBot - Software & Firmware</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="electrical.html">Electrical</a>
+        <a href="mechanical.html">Mechanical</a>
+        <a href="software.html">Software/Firmware</a>
+        <a href="budget.html">Budget (BOM)</a>
+        <a href="journey.html">Journey & Design Process</a>
+    </nav>
+
+    <div class="main-content">
+        <section class="section">
+            <h2>Software Architecture & Logic</h2>
+            <p class="summary-text">The BoxBot software stack is built on Python for high-level autonomous decision-making and C++ for low-level real-time motor control.</p>
+
+            <div class="discipline-box initial-stage" style="border-left: 4px solid #d2691e;">
+                <div class="box-header">
+                    <h4>🔗 SOURCE CODE REPOSITORY</h4>
+                </div>
+                <p>Access the full development history, libraries, and autonomous scripts here:</p>
+                <a href="https://github.com/YourUsername/BoxBot" target="_blank" class="github-btn">View on GitHub</a>
+            </div>
+
+            <div class="phase-content">
+                <div class="discipline-box soft">
+                    <div class="box-header">
+                        <h4>OS & ENVIRONMENT</h4>
+                    </div>
+                    <ul class="elec-list">
+                        <li><strong>Raspberry Pi OS:</strong> Debian-based Linux environment.</li>
+                        <li><strong>Python 3.x:</strong> Primary language for autonomous logic.</li>
+                        <li><strong>Arduino IDE:</strong> Firmware flashing for low-level MCU.</li>
+                    </ul>
+                </div>
+
+                <div class="discipline-box soft">
+                    <div class="box-header">
+                        <h4>LIBRARIES & TOOLS</h4>
+                    </div>
+                    <ul class="elec-list">
+                        <li><strong>PySerial:</strong> For communication between Pi and Arduino.</li>
+                        <li><strong>RealSense SDK:</strong> For depth processing and spatial awareness.</li>
+                        <li><strong>NumPy:</strong> Used for coordinate transformation and lift math.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3>Autonomous State Machine</h3>
+            <div class="full-width-details open">
+                <div class="initial-content-wrapper">
+                    <div class="initial-sub">
+                        <h5>Detect, Approach, Squeeze Sequence</h5>
+                        <p>The core firmware logic uses a Finite State Machine (FSM) to handle transitions between navigation and manipulation. This prevents mechanical stalls by ensuring the 'squeeze' only activates once the depth camera confirms payload proximity.</p>
+                    </div>
+                    
+                    
+
+                    <div class="centered-image-container">
+                        <video class="journey-main-img" controls muted loop>
+                            <source src="media/jacksonsprint1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="img-caption">Video 1: Testing PWM motor scaling and serial command latency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

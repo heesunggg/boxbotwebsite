@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxBot - Electrical System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="electrical.html">Electrical</a>
+        <a href="mechanical.html">Mechanical</a>
+        <a href="software.html">Software/Firmware</a>
+        <a href="budget.html">Budget (BOM)</a>
+        <a href="journey.html">Journey & Design Process</a>
+    </nav>
+
+    <div class="main-content">
+        <section class="section">
+            <h2>Electrical System Architecture</h2>
+            <p class="summary-text">The BoxBot electrical system is designed for high-torque reliability and modular troubleshooting, featuring a dual-rail power architecture.</p>
+            
+            <div class="centered-image-container">
+                <img src="media/elecsprint1.png" alt="Full Electrical Schematic" class="journey-main-img">
+                <p class="img-caption">Figure 1: High-level System Wiring Diagram.</p>
+            </div>
+
+            <div class="phase-content">
+                
+                <div class="discipline-box elec">
+                    <div class="box-header">
+                        <h4>POWER MANAGEMENT</h4>
+                    </div>
+                    <p class="box-preview">24V Primary Rail with integrated safety fusing.</p>
+                    <ul class="elec-list">
+                        <li><strong>Battery:</strong> 24V LiPo for high-current draw.</li>
+                        <li><strong>Protection:</strong> 6-circuit LED blade fuse block.</li>
+                        <li><strong>Conversion:</strong> Buck converters for 5V logic stability.</li>
+                    </ul>
+                </div>
+
+                <div class="discipline-box soft">
+                    <div class="box-header">
+                        <h4>LOGIC & CONTROL</h4>
+                    </div>
+                    <p class="box-preview">Raspberry Pi 2 and Arduino Serial interface.</p>
+                    <ul class="elec-list">
+                        <li><strong>Primary Controller:</strong> Raspberry Pi 2 for Vision/Logic.</li>
+                        <li><strong>MCU:</strong> Arduino for low-level motor pulsing.</li>
+                        <li><strong>Sensors:</strong> RealSense depth camera and limit switches.</li>
+                    </ul>
+                </div>
+
+                <div class="discipline-box mech">
+                    <div class="box-header">
+                        <h4>ACTUATION</h4>
+                    </div>
+                    <p class="box-preview">High-torque Sabertooth 2x12 motor drivers.</p>
+                    <ul class="elec-list">
+                        <li><strong>Drive Motors:</strong> Dual-channel output for U-shape drivetrain.</li>
+                        <li><strong>Precision:</strong> PWM-controlled variable speed scaling.</li>
+                        <li><strong>Connectors:</strong> Vibration-resistant XT60 connectors.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h3>Major Design Decisions</h3>
+            <div class="full-width-details open">
+                <div class="initial-content-wrapper">
+                    <div class="initial-sub">
+                        <h5>Standardization vs. Customization</h5>
+                        <p>We chose the <strong>Sabertooth 2x12</strong> over custom H-bridge circuits to prioritize reliability and familiarity from previous projects. This allowed us to focus our development time on autonomous sensor fusion rather than troubleshooting power-stage failures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
