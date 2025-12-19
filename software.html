@@ -19,7 +19,7 @@
     <div class="main-content">
         <section class="section">
             <h2>Software Architecture & Logic</h2>
-            <p class="summary-text">The BoxBot software stack is built on Python for high-level autonomous decision-making and C++ for low-level real-time motor control.</p>
+            <p class="summary-text">The BoxBot software stack is built with ROS2 and Python. When building our software, we prioritized development speed and expandability.</p>
 
             <div class="discipline-box initial-stage" style="border-left: 4px solid #d2691e;">
                 <div class="box-header">
@@ -35,9 +35,9 @@
                         <h4>OS & ENVIRONMENT</h4>
                     </div>
                     <ul class="elec-list">
-                        <li><strong>Raspberry Pi OS:</strong> Debian-based Linux environment.</li>
-                        <li><strong>Python 3.x:</strong> Primary language for autonomous logic.</li>
-                        <li><strong>Arduino IDE:</strong> Firmware flashing for low-level MCU.</li>
+                        <li><strong>Raspberry Pi OS:</strong> Ubuntu 24.04, a Debian-based Linux environment.</li>
+                        <li><strong>ROS2 Jazzy Jalisco:</strong> Robotics-focused software framework providing useful abstraction tools.</li>
+                        <li><strong>Python 3.12:</strong> Primary language for autonomous logic and motor control.</li>
                     </ul>
                 </div>
 
@@ -46,9 +46,9 @@
                         <h4>LIBRARIES & TOOLS</h4>
                     </div>
                     <ul class="elec-list">
-                        <li><strong>PySerial:</strong> For communication between Pi and Arduino.</li>
-                        <li><strong>RealSense SDK:</strong> For depth processing and spatial awareness.</li>
-                        <li><strong>NumPy:</strong> Used for coordinate transformation and lift math.</li>
+                        <li><strong>RealSense SDK:</strong> Enabling depth processing and spatial awareness for RealSense depth camera.</li>
+                        <li><strong>pupil-apriltags:</strong> Python library used for April Tag detection and identification.</li>
+                        <li><strong>gpiozero:</strong> Python library used for Raspberry Pi GPIO interaction.</li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 <div class="initial-content-wrapper">
                     <div class="initial-sub">
                         <h5>Detect, Approach, Squeeze Sequence</h5>
-                        <p>The core firmware logic uses a Finite State Machine (FSM) to handle transitions between navigation and manipulation. This prevents mechanical stalls by ensuring the 'squeeze' only activates once the depth camera confirms payload proximity.</p>
+                        <p>The core firmware logic uses a Finite State Machine (FSM) to handle transitions between navigation and manipulation. This prevents mechanical stalls by ensuring the 'squeeze' only activates once the depth camera confirms payload proximity. Additionally, this allows for each state to be tested and validated individually, improving development speed.</p>
                     </div>
                     
                     
@@ -71,6 +71,22 @@
                             Your browser does not support the video tag.
                         </video>
                         <p class="img-caption">Video 1: Testing PWM motor scaling and serial command latency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h3>ROS Architecture</h3>
+            <div class="full-width-details open">
+                <div class="initial-content-wrapper">
+                    <div class="initial-sub">
+                        <h5>ROS Diagram</h5>
+                        <p>Diagram of our ROS system. Drive node handles direct GPIO interaction with motors and motor controllers. Teleoperation node captures keyboard input and sends motor commands. Computer vision node tracks state machine, processes image data, and sends motor commands. Both drive and computer vision nodes run on the Raspberry Pi, while the teleoperation node runs on on a laptop, connecting to the laptop over WiFi.</p>
+                    </div>
+
+                    <div class="centered-image-container">
+                        <img src="media/box_bot_wiring_diagram_v2.png" alt="Full Electrical Schematic" class="journey-main-img">
+                        <p class="img-caption">Figure 1: High-level System Wiring Diagram.</p>
                     </div>
                 </div>
             </div>
