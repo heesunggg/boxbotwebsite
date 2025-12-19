@@ -127,7 +127,7 @@
             <h4>MECHANICAL</h4>
             <span class="expand-icon">+</span>
         </div>
-        <p class="box-preview">Designing the U-shaped Chassis with 3D prints </p>
+        <p class="box-preview">Designing the U-shaped chassis with 3D prints </p>
             
     </div>
 
@@ -226,7 +226,7 @@
                 <h4>MECHANICAL</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">Drivebase and scissor lift Updates</p>
+            <p class="box-preview">Drivebase and scissor lift updates</p>
         </div>
 
         <div class="discipline-box elec" onclick="togglePhaseContent('p3-elec', this)">
@@ -427,7 +427,7 @@
                 <h4>MECHANICAL</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">Final Touches on Drivebase and Scissor Lift</p>
+            <p class="box-preview">Final touches on drivebase and scissor lift</p>
         </div>
 
         <div class="discipline-box elec" onclick="togglePhaseContent('p5-elec', this)">
@@ -435,7 +435,7 @@
                 <h4>ELECTRICAL</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">UNDER PROGRESS</p>
+            <p class="box-preview">Refinement and mechanical integration</p>
         </div>
 
         <div class="discipline-box soft" onclick="togglePhaseContent('p5-soft', this)">
@@ -443,7 +443,7 @@
                 <h4>SOFTWARE</h4>
                 <span class="expand-icon">+</span>
             </div>
-            <p class="box-preview">UNDER PROGRESS</p>
+            <p class="box-preview">Autonomous development</p>
         </div>
 
 
@@ -467,6 +467,32 @@
                     <p class="img-caption">Assembly of the Scissor lift</p>
                 </div>
 
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="p5-elec" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>Final Component Integration</h5>
+                    <p>In the last sprint, we had finalized our core wiring harness, allowing us to move into a refinement stage. We completed the final connections to the servo motors and limit switches, which had just been mounted in their final locations. We incorporated wire loom and heatshrink between the arms and core of the robot, providing the right balance of flexibility and protection for the connections that change length. Finally, we worked with the mechanical team to modify the electronics enclosure for necessary cable inputs and outputs.</p>
+                </div>
+                <div class="collapse-trigger" onclick="closeAllInPhase(this)">
+                    <span>Show Less</span>
+                    <span class="expand-icon">−</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="p5-soft" class="full-width-details">
+            <div class="initial-content-wrapper">
+                <div class="initial-sub">
+                    <h5>Servo Integration and State Machine</h5>
+                    <p>We implemented the Servo control code for the scissor lift, officially enabling Box Bot to complete the full sequence of its designed operation. Another focus for this sprint was developing and implementing a complete autonomous system. We developed a complete stat machine, guiding the robot from boot up to drop off. Each stage of this process required extensive testing, and in the end, we were unable to complete an end-to-end autonomous sequence. However, we did demonstrate functional tracking of April tags, allowing Box Bot to detect and squeeze a target box completely autonomously.</p>
+                </div>
                 <div class="collapse-trigger" onclick="closeAllInPhase(this)">
                     <span>Show Less</span>
                     <span class="expand-icon">−</span>
@@ -523,7 +549,7 @@
                     <h5>Key Learnings & Future Iterations</h5>
                     <ul>
                         <li><strong>Weight Optimization:</strong> If we were to do it again, we would use thinner aluminum or carbon fiber to increase battery life.</li>
-                        <li><strong>Sensor Upgrades:</strong> Transitioning from a single depth camera to a LiDAR-based system would improve navigation in tight warehouse spaces.</li>
+                        <li><strong>Sensor Upgrades:</strong> Increasing the number of limit switches and motor encoders would improve our autonomous system by creating a continuous feedback loop.</li>
                         <li><strong>Mechanism Speed:</strong> Increasing the gear ratio on the rack and pinion would speed up the 'squeeze' sequence.</li>
                     </ul>
                 </div>
