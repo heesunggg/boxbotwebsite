@@ -19,10 +19,10 @@
     <div class="main-content">
         <section class="section">
             <h2>Electrical System Architecture</h2>
-            <p class="summary-text">The BoxBot electrical system is designed for high-torque reliability and modular troubleshooting, featuring a dual-rail power architecture.</p>
+            <p class="summary-text">The Box Bot electrical system is designed to maximize safety, modularity, and iteration speed.</p>
             
             <div class="centered-image-container">
-                <img src="media/elecsprint1.png" alt="Full Electrical Schematic" class="journey-main-img">
+                <img src="media/box_bot_wiring_diagram_v2.png" alt="Full Electrical Schematic" class="journey-main-img">
                 <p class="img-caption">Figure 1: High-level System Wiring Diagram.</p>
             </div>
 
@@ -30,37 +30,38 @@
                 
                 <div class="discipline-box elec">
                     <div class="box-header">
-                        <h4>POWER MANAGEMENT</h4>
+                        <h4>Power Management</h4>
                     </div>
-                    <p class="box-preview">24V Primary Rail with integrated safety fusing.</p>
+                    <p class="box-preview">Power delivery and management.</p>
                     <ul class="elec-list">
-                        <li><strong>Battery:</strong> 24V LiPo for high-current draw.</li>
-                        <li><strong>Protection:</strong> 6-circuit LED blade fuse block.</li>
-                        <li><strong>Conversion:</strong> Buck converters for 5V logic stability.</li>
+                        <li><strong>Battery:</strong> 24V 4Ah Lithium Ion Battery with integrated battery management system.</li>
+                        <li><strong>Protection:</strong> Automotive power distribution block with fuse protection.</li>
+                        <li><strong>Conversion:</strong> LM2596 buck converters to step down 24V source to 12V and 5V.</li>
                     </ul>
                 </div>
 
                 <div class="discipline-box soft">
                     <div class="box-header">
-                        <h4>LOGIC & CONTROL</h4>
+                        <h4>Logic & Control</h4>
                     </div>
-                    <p class="box-preview">Raspberry Pi 2 and Arduino Serial interface.</p>
+                    <p class="box-preview">Onboard compute and motor drivers.</p>
                     <ul class="elec-list">
-                        <li><strong>Primary Controller:</strong> Raspberry Pi 2 for Vision/Logic.</li>
-                        <li><strong>MCU:</strong> Arduino for low-level motor pulsing.</li>
-                        <li><strong>Sensors:</strong> RealSense depth camera and limit switches.</li>
+                        <li><strong>Primary Computer:</strong> Raspberry Pi 4b for control logic, vision processing, and WiFi connection.</li>
+                        <li><strong>DC Motor Driver:</strong> Sabertooth 2x12 dual motor driver controlled via serial connection to Raspberry Pi.</li>
+                        <li><strong>Stepper Motor Driver:</strong> L298N Dual H-Bridge connected to Raspberry Pi GPIO.</li>
                     </ul>
                 </div>
 
                 <div class="discipline-box mech">
                     <div class="box-header">
-                        <h4>ACTUATION</h4>
+                        <h4>Sensors & Actuators</h4>
                     </div>
-                    <p class="box-preview">High-torque Sabertooth 2x12 motor drivers.</p>
+                    <p class="box-preview">Sensing suite and motors.</p>
                     <ul class="elec-list">
-                        <li><strong>Drive Motors:</strong> Dual-channel output for U-shape drivetrain.</li>
-                        <li><strong>Precision:</strong> PWM-controlled variable speed scaling.</li>
-                        <li><strong>Connectors:</strong> Vibration-resistant XT60 connectors.</li>
+                        <li><strong>Sensing:</strong> Intel RealSense D455 Depth Camera and dual limit switches.</li>
+                        <li><strong>Drive Motors:</strong> IG32P 24V 265 RPM gear motors.</li>
+                        <li><strong>Squeeze Motor:</strong> NEMA 17 12V stepper motor.</li>
+                        <li><strong>Lift Motors:</strong> 25kg continuous rotation 5V servo motors.</li>
                     </ul>
                 </div>
 
@@ -72,8 +73,16 @@
             <div class="full-width-details open">
                 <div class="initial-content-wrapper">
                     <div class="initial-sub">
+                        <h5>Safety Components</h5>
+                        <p>Every aspect of our electrical system was designed with safety as the highest priority. Our robot contains an easily accessible emergency stop button that immediately cuts all battery power. When sourcing a battery, we selected an option with integrated BMS to eliminate over/under voltage risk. Additionally, our battery voltage is split among three separate sub-circuits (5V, 12V, and 24V), each protected by a fuse to provide over-current protection.</p>
+                    </div>
+                    <div class="initial-sub">
+                        <h5>Wire Harnessing</h5>
+                        <p>The core of our wire harness is a soldered breadboard, which provides an electrically and mechanically reliable way to permanently connect components. From this breadboard we designed our wire harness with JST-style quick-disconnect connectors. This modularity improved the speed that we could test and assemble our electrical system. Since our robot changes size during operation, harnessing presented a unique challenge. We addressed this by using wire loom and heat-shrink tubing, allowing the wire to expand and compress in a predictable manner.</p>
+                    </div>
+                    <div class="initial-sub">
                         <h5>Standardization vs. Customization</h5>
-                        <p>We chose the <strong>Sabertooth 2x12</strong> over custom H-bridge circuits to prioritize reliability and familiarity from previous projects. This allowed us to focus our development time on autonomous sensor fusion rather than troubleshooting power-stage failures.</p>
+                        <p>Across our electrical system, we opted to use standard, off-the-shelf components wherever possible. While a custom PCB could have made our electrical system more space and power efficient, we decided that the additional integration time was not justified. This allowed our team to iterate and improve our electrical system faster.</p>
                     </div>
                 </div>
             </div>
