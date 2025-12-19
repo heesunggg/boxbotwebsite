@@ -182,6 +182,10 @@
             <img src="media/elecsprint1.png" alt="Electrical Prototype" class="journey-main-img">
             <p class="img-caption">Electrical Diagram of the prototype robot</p>
         </div>
+        <div class="centered-image-container">
+            <img src="media/elec_sp1.png" alt="First prototype" class="journey-main-img"style="width: 400px; height: auto;">
+            <p class="img-caption">First prototype electrical system</p>
+        </div>
         <div class="collapse-trigger" onclick="closeAllInPhase(this)">
             <span>Show Less</span>
             <span class="expand-icon">−</span>
@@ -195,7 +199,6 @@
             <h5>Drive functionality </h5>
             <p>
                 We focused on building basic driving functionality code. We got forward, reverse, close, and release to all work. This was all controlled through serial connection to a laptop. Testing with a wired USB cable for serial connection proved cumbersome, prompting us to move to an alternative onboard microcontroller/computer for the next phase.
-
             </p>
         </div>
         <div class="centered-image-container">
@@ -204,6 +207,10 @@
                 Your browser does not support the video tag.
             </video>
             <p class="img-caption">Video of our Sprint 1 Product driving</p>
+        </div>
+        <div class="centered-image-container">
+            <img src="media/soft_ide.webp" alt="Arduino IDE" class="journey-main-img"style="width: 400px; height: auto;">
+            <p class="img-caption">Programmed with Arduino IDE</p>
         </div>
         <div class="collapse-trigger" onclick="closeAllInPhase(this)">
             <span>Show Less</span>
@@ -293,6 +300,10 @@
                         <li><strong>Raspberry 4b:</strong> WiFi-enabled single board computer</li>
                     </ul>
                 </div>
+                <div class="centered-image-container">
+                    <img src="media/elec_motor_test.png" alt="motor test" class="journey-main-img"style="width: 400px; height: auto;">
+                    <p class="img-caption">Testing DC motors</p>
+                </div>
                 <div class="collapse-trigger" onclick="closeAllInPhase(this)">
                     <span>Show Less</span>
                     <span class="expand-icon">−</span>
@@ -310,6 +321,10 @@
                         <li><strong>Drive Node:</strong> Listens for commands from either teleoperation or autonomous Nodes. Sends necessary GPIO signals to drive and squeeze motor controllers.</li>
                         <li><strong>Autonomous Node:</strong> Created basic setup to communicate with RealSense camera.</li>
                     </ul>
+                    <div class="centered-image-container">
+                        <img src="media/soft_old_ros.jpg" alt="Old ROS Architecture" class="journey-main-img"style="width: 400px; height: auto;">
+                        <p class="img-caption">Old ROS architecture, later simplified</p>
+                    </div>
                 </div>
                 <div class="collapse-trigger" onclick="closeAllInPhase(this)">
                     <span>Show Less</span>
@@ -393,6 +408,10 @@
                     <h5>Wiring Finalization & Protection</h5>
                     <p>We spent a significant amount of time creating a finalized cable routing solution to prevent interference with the moving rack and pinion. We made custom length wire harnesses with quick-disconnect DuPont-style connectors for all components. We also used a solderable breadboard to create a permanent junction box for all components. All logic level connections followed standardized wire color rules. We also ensured our digital wiring diagram aligned with the physical system exactly. At this point, we also properly implemented our emergency stop button and fuse block. These measures protect the user from an out of control robot and the components from over-current.</p>
                 </div>
+                <div class="centered-image-container">
+                    <img src="media/elec_fuse1.jpeg" alt="Fuse block" class="journey-main-img"style="width: 400px; height: auto;">
+                    <p class="img-caption">Fuse block fitted with current-limiting fuses</p>
+                </div>
                 <div class="collapse-trigger" onclick="closeAllInPhase(this)">
                     <span>Show Less</span>
                     <span class="expand-icon">−</span>
@@ -405,6 +424,10 @@
                 <div class="initial-sub">
                     <h5>System Tuning & Autonomous Groundwork</h5>
                     <p>We moved into the refinement stage for our drive software, ironing out bugs with drive code, getting to the stage where our robot reliably operated under teleoperation mode. With this accomplished, we were able to turn our attention to autonomous, which we worked on in parallel with the drive code updates outside of the ROS environment. We were able to detect April Tags with the camera, and generate simple drive commands to follow the tags. Unfortunately, we encountered a major roadblock when attempting to integrate this code into our ROS environment, and lost significant amount of time to resolving dependency issues with the RealSense Python library. As a result, we were unable to test autonomous before the end of the sprint, as originally planned.</p>
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/soft_cam.jpg" alt="Camera" class="journey-main-img"style="width: 400px; height: auto;">
+                    <p class="img-caption">RealSense D455 depth camera</p>
                 </div>
                 <div class="collapse-trigger" onclick="closeAllInPhase(this)">
                     <span>Show Less</span>
@@ -480,6 +503,10 @@
                     <h5>Final Component Integration</h5>
                     <p>In the last sprint, we had finalized our core wiring harness, allowing us to move into a refinement stage. We completed the final connections to the servo motors and limit switches, which had just been mounted in their final locations. We incorporated wire loom and heatshrink between the arms and core of the robot, providing the right balance of flexibility and protection for the connections that change length. Finally, we worked with the mechanical team to modify the electronics enclosure for necessary cable inputs and outputs.</p>
                 </div>
+                <div class="centered-image-container">
+                    <img src="media/elec_wide2.jpeg" alt="Refined electrical system" class="journey-main-img"style="width: 400px; height: auto;">
+                    <p class="img-caption">Refined electrical system</p>
+                </div>
                 <div class="collapse-trigger" onclick="closeAllInPhase(this)">
                     <span>Show Less</span>
                     <span class="expand-icon">−</span>
@@ -492,6 +519,10 @@
                 <div class="initial-sub">
                     <h5>Servo Integration and State Machine</h5>
                     <p>We implemented the Servo control code for the scissor lift, officially enabling Box Bot to complete the full sequence of its designed operation. Another focus for this sprint was developing and implementing a complete autonomous system. We developed a complete stat machine, guiding the robot from boot up to drop off. Each stage of this process required extensive testing, and in the end, we were unable to complete an end-to-end autonomous sequence. However, we did demonstrate functional tracking of April tags, allowing Box Bot to detect and squeeze a target box completely autonomously.</p>
+                </div>
+                <div class="centered-image-container">
+                    <img src="media/state_machine.jpg" alt="State Machine" class="journey-main-img"style="width: 600px; height: auto;">
+                    <p class="img-caption">Autonomous state machine</p>
                 </div>
                 <div class="collapse-trigger" onclick="closeAllInPhase(this)">
                     <span>Show Less</span>
